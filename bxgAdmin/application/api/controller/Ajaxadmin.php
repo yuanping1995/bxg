@@ -63,7 +63,7 @@ class Ajaxadmin extends \think\Controller
         if (is_null1($arr) == "0000") {
             $arr1 = "0000";
         } else {
-            {
+
                 $info = new info();
                 $asset = new Asset();
                 $rest = $info->where($uId)->update(['Upower' => $Member['Upower']]);
@@ -76,9 +76,26 @@ class Ajaxadmin extends \think\Controller
                 }else{
                     $arr1 = '00001';
                 }
-            }
+
 
         }
         return json($arr1);
+    }
+    public function Setrole(){
+        $U['uId'] = input('uId');
+        $U['Role'] = input('role');
+        if(is_null1($U)=='0000'){
+            $arr = '0000';
+        }else{
+            $uId['uId'] =  $U['uId'];
+            $info = new info();
+            $rest = $info->where($uId)->update(['Role' =>  $U['Role'] ]);
+            if($rest){
+                $arr = '1111';
+            }else{
+                $arr = '0001';
+            }
+        }
+        return json($arr);
     }
 }
