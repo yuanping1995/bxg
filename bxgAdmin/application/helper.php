@@ -88,4 +88,90 @@ function Membership($arr){
     }
     return $arr;
 }
-/**/
+
+/**
+ * @param $arr 比较的数据ss
+ * @return string
+ */
+function Role($arr)
+{
+    switch ($arr) {
+        case 1:
+            $arr = "用户";
+            break;
+        case 2:
+            $arr = "商家";
+            break;
+        case 3:
+            $arr = "站点";
+            break;
+        case 4:
+            $arr = "员工";
+            break;
+        default:
+            $arr = "兼职";
+    }
+    return $arr;
+}
+    /**
+     * @param $arr 比较的数据
+     * @return string
+     */
+function AuthStatus($arr)
+{
+    switch ($arr) {
+        case 1:
+            $arr = "未认证";
+            break;
+        case 2:
+            $arr = "已认证";
+            break;
+        case 3:
+            $arr = "审核中";
+            break;
+//        case 4:  $arr = "员工";  break;
+        default:
+            $arr = "错误";
+    }
+    return $arr;
+}
+
+    /**
+     * @param $arr 比较的数字
+     * @return string
+     */
+function Enable($arr){
+    switch ($arr) {
+        case 1:
+            $arr = "锁定";
+            break;
+        case 2:
+            $arr = "正常";
+            break;
+        default:
+            $arr = "错误";
+    }
+    return $arr;
+}
+
+    /**店铺审核
+     * @param $arr
+     * @return string
+     */
+function shopStatus($arr){
+    switch ($arr) {
+        case 1:
+            $arr = "未开通";
+            break;
+        case 2:
+            $arr = "待审核";
+            break;
+        case 3;
+            $arr = "正常营业";
+            break;
+        default:
+            $arr = "被冻结";
+    }
+    return $arr;
+}
+

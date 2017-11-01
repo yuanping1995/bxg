@@ -8,8 +8,12 @@
 
 namespace app\admin\model;
 
-
-class Recommend
+use think\Model;
+class Recommend extends Model
 {
-
+ protected $name = "recommend";
+ public function info(){
+     $info  =  $this->hasOne("Info",'uId','CoverId')->field('uId,id,nickName');;
+     return $info;
+ }
 }

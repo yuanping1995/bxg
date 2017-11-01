@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\info;
-
+use app\admin\model\Recommend;
 class Index extends \think\Controller
 {
 	// 首页框架
@@ -45,10 +45,19 @@ class Index extends \think\Controller
     //
     public function user_info(){
         $uId['uId']  = input("id");
-        $list = info::with("honor,follow,Collection,agreement")->where($uId)->find()->toArray();
-
+        $list = info::with("honor,follow,Collection,agreement,resume,recommend")->where($uId)->find()->toArray();
+        $recommendcId['uId'] = $list['recommend']['uId'];
+        $recommendinfo = Recommend::with("info")->where($recommendcId)->find();
+        if(!empty($recommendinfo)){
+              $recommendinfo = $recommendinfo->toArray();
+        }
+        $list['recommend']['CoverId'] = $recommendinfo['info'];
         $list['Upower'] =  Membership($list['Upower']);
 
+        $list['Role'] = Role($list['Role']);
+        $list['AuthStatus'] = AuthStatus($list['AuthStatus']);
+        $list['Enable'] = Enable($list['Enable']);
+        $list['shopStatus'] = shopStatus($list['shopStatus']);
         $this->assign('arr',$list);
         return $this->fetch();
     }

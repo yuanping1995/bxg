@@ -32,6 +32,14 @@ class info extends Model
          $agreement = $this->hasMany("Agreement",'uId','uId');
          return $agreement;
      }
+     public function resume(){
+         $resume = $this->hasOne('Resume','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+         return $resume;
+     }
+     public function recommend(){
+         $recommend = $this->hasOne('Recommend','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+         return $recommend;
+     }
 
 
 }
