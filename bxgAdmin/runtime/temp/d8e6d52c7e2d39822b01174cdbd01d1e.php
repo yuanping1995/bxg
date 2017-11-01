@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\index_v.html";i:1509330632;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index_v.html";i:1509502517;}*/ ?>
 <!DOCTYPE html>
 <html>
 

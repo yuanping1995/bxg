@@ -265,10 +265,10 @@
                                
                                 <div class="col-sm-3">
                                     <div class="showAvactor">
-                                        <img src="{$arr['Icon']}">
+                                        <img src="{$Think.__APPROOT__}{$arr['Icon']}">
                                         <br>
                                         <button type="button" class="btn btn-primary btn-sm upAvactor" style="margin:15px 0;">修改头像</button>
-                                        <input type="file" accept="image/*" name="file" class="hide imgUp">
+                                        <input type="file" accept="image/*" name="file" class="hide imgUp" data-uid="{$arr.uId}">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -1175,9 +1175,9 @@
                 $('.imgUp').click();
             });
             $('.imgUp').on('change',function(){
-                $(".showAvactor").html('');
+                var uid = $(this).attr("data-uid");
                 var file = this.files[0];
-                photoCompress(file,60,$(".showAvactor")[0]);
+                photoCompress(file,60,$(".showAvactor img")[0],uid);
             });
             // 图片放大
             $('.imgBig').fancybox({

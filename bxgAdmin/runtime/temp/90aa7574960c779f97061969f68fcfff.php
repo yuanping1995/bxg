@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509517991;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509522470;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -266,10 +266,10 @@
                                
                                 <div class="col-sm-3">
                                     <div class="showAvactor">
-                                        <img src="<?php echo $arr['Icon']; ?>">
+                                        <img src="<?php echo __APPROOT__; ?><?php echo $arr['Icon']; ?>">
                                         <br>
                                         <button type="button" class="btn btn-primary btn-sm upAvactor" style="margin:15px 0;">修改头像</button>
-                                        <input type="file" accept="image/*" name="file" class="hide imgUp">
+                                        <input type="file" accept="image/*" name="file" class="hide imgUp" data-uid="<?php echo $arr['uId']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -1176,9 +1176,9 @@
                 $('.imgUp').click();
             });
             $('.imgUp').on('change',function(){
-                $(".showAvactor").html('');
+                var uid = $(this).attr("data-uid");
                 var file = this.files[0];
-                photoCompress(file,60,$(".showAvactor")[0]);
+                photoCompress(file,60,$(".showAvactor img")[0],uid);
             });
             // 图片放大
             $('.imgBig').fancybox({

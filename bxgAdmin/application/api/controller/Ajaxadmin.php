@@ -17,13 +17,10 @@ class Ajaxadmin extends \think\Controller
      * 修改头像的ajax操作
      */
     public function ModifyAvatar(){
-        $base64_img = trim($_POST['img']);
+        $base64_img = trim(input('post.img'));
         $up_dir = './upload/';//存放在当前目录的upload文件夹下
-        $U['uId'] = input("uId");
-        if(!empty($U['uId'])){
-            $arr = array('state'=>'0003');
-            exit;
-        }
+        $U['uId'] = input("post.uId");
+    
         if(!file_exists($up_dir)){
             mkdir($up_dir,0777);
         }
@@ -34,8 +31,8 @@ class Ajaxadmin extends \think\Controller
                 if(file_put_contents($new_file, base64_decode(str_replace($result[1], '', $base64_img)))){
                     $img_path = str_replace('../../..', '', $new_file);
                     $path = new info();
-                    $img_path['Icon'] = $img_path;
-                    $rest = $path->where($U)->save($img_path);
+                  
+                    $rest = $path->where($U)->update(['Icon'=>$img_path]);
                     if(!empty($rest)){
                         $arr = array('state'=>'1111');
                     }else{
