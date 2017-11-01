@@ -86,14 +86,6 @@
             background:-o-linear-gradient(315deg,#3b383a, #1d1419);
             background:linear-gradient(315deg,#3b383a, #1d1419); 
         }
-        .identify-img{
-            width: 100%;
-            height:100%;
-            border-radius: 7px;
-        }
-        .radio{
-            padding-top:0 !important;
-        }
     </style>
 
 </head>
@@ -118,7 +110,7 @@
                     <div class="tab-content" >
                         <!-- 用户充值弹窗 -->
                         <div class="modal outmodal" id="upGrade" tabindex="-1" role="dialog" aria-hidden="true">
-                             <div class="modal-dialog">
+                            <div class="modal-dialog">
                                 <div class="modal-content animated bounceInRight">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
@@ -127,24 +119,9 @@
                                         <div class="modal-body">
                                             <form role="form" class="form-horizontal m-t">
                                                  <div class="form-group draggable">
-                                                    <label class="col-sm-3 control-label">等级：</label>
+                                                    <label class="col-sm-3 control-label">充值：</label>
                                                     <div class="col-sm-9">
-                                                        <div class="col-sm-3 radio i-checks" >
-                                                            <label><input type="radio" checked="" value="1" name="grade"><i></i>vip</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="2" name="grade"> <i></i>svip</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="0" name="grade"> <i></i> ovip</label>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </div>
-                                                <div class="form-group draggable">
-                                                    <label class="col-sm-3 control-label">升级金额：</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" value="20" name="upgrade" disabled="disabled" style="padding-left:10px;border:1px solid #ccc;background:#fff;">
+                                                        <input type="text" name="" class="form-control" id="recharge_money" placeholder="请输入充值金额">
                                                     </div>
                                                 </div>
                                             </form>
@@ -201,23 +178,8 @@
                                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
                                         </button>
                                         <h4 class="modal-title">预览身份认证信息</h4>
-                                        <div class="row modal-body">
-                                            <div class="col-sm-12">
-                                                <p>姓名：XXX</p>
-                                                <p>身份证号：1111111111111111111111111</p>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <h4>正面照</h4>
-                                                <a class="imgBig" href="http://sz.focus.cn/upload/photos/1786/K5cdnU75.jpg">
-                                                    <img class="identify-img" src="http://sz.focus.cn/upload/photos/1786/K5cdnU75.jpg"/>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <h4>背面照</h4>
-                                                <a class="imgBig" href="http://d.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf24971f4ebb17eca8064388f9d.jpg">
-                                                    <img class="identify-img" src="http://d.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf24971f4ebb17eca8064388f9d.jpg"/>
-                                                </a>
-                                           </div>
+                                        <div class="modal-body">
+                                           
                                         </div>
                                        
                                         
@@ -276,19 +238,19 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">用户ID</label>
                                             <div class="col-sm-9">
-                                                11156324789
+                                                {$arr.uId}
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-3 control-label">昵称</label>
                                             <div class="col-sm-8">
-                                                袁平
+                                                {$arr.nickName}
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">注册时间</label>
                                             <div class="col-sm-7">
-                                                2017/10/10 10:00
+                                                {$arr['Regtime']|date="Y/m/d H:i:s",###}
                                             </div>
                                         </div>    
                                     </div>
@@ -296,7 +258,7 @@
                                        <div class="col-sm-4">
                                             <label class="col-sm-4 control-label">会员等级</label>
                                             <div class="col-sm-8">
-                                                <span class="upower" style="display:inline-block;padding-right:10px;">普通</span>
+                                                <span class="upower" style="display:inline-block;padding-right:10px;">{$arr['Upower']}</span>
                                                 <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#upGrade">升级</button>
                                             </div>
                                         </div>
@@ -1046,7 +1008,7 @@
                                                 <td>2000</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-warning">待付款</span></td>
-                                                <td><a href="{:url('admin/index/order_detail')}" class="label label-info">查看</a></td>
+                                                <td><span class="label label-info">查看</span></td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -1056,7 +1018,7 @@
                                                 <td>12345</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                                                <td><a href="{:url('admin/index/order_detail')}" class="label label-info">查看</a></td>
+                                                <td><span class="label label-info">查看</span></td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -1066,7 +1028,7 @@
                                                 <td>12345</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                                                <td><a href="{:url('admin/index/order_detail')}" class="label label-info">查看</a></td>
+                                                <td><span class="label label-info">查看</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
