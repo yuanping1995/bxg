@@ -61,4 +61,21 @@ class Index extends \think\Controller
         $this->assign('arr',$list);
         return $this->fetch();
     }
+    public function order_detail(){
+        return $this->fetch();
+    }
+// 区域站点管理
+    public function area(){
+        return $this->fetch();
+    }
+    // 站点添加
+// 数据统计
+    //用户统计
+    public function count_user(){
+        return $this->fetch();
+    }
+    // 商家统计
+    public function count_seller(){
+        return $this->fetch();
+    }
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509517240;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509506196;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -266,7 +266,7 @@
                                
                                 <div class="col-sm-3">
                                     <div class="showAvactor">
-                                        <img src="<?php echo $arr['Icon']; ?>">
+                                        <img src="http://up.qqjia.com/z/face01/face06/facejunyong/junyong04.jpg">
                                         <br>
                                         <button type="button" class="btn btn-primary btn-sm upAvactor" style="margin:15px 0;">修改头像</button>
                                         <input type="file" accept="image/*" name="file" class="hide imgUp">
@@ -304,7 +304,7 @@
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">用户角色</label>
                                             <div class="col-sm-8">
-                                                <span class="role" style="display:inline-block;padding-right:10px;"><?php echo $arr['Role']; ?></span>
+                                                <span class="role" style="display:inline-block;padding-right:10px;">大众</span>
                                                  <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#setRole">设置</button>
                                             </div>
                                         </div>
@@ -314,14 +314,14 @@
                                        <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">认证状态</label>
                                             <div class="col-sm-9">
-                                                <span class="identify" style="display:inline-block;padding-right:10px;"><?php echo $arr['AuthStatus']; ?></span>
+                                                <span class="identify" style="display:inline-block;padding-right:10px;">已认证</span>
                                                 <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#identify">查看</button>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">账户状态</label>
                                             <div class="col-sm-8">
-                                                <span class="account" style="display:inline-block;padding-right:10px;"><?php echo $arr['Enable']; ?></span>
+                                                <span class="account" style="display:inline-block;padding-right:10px;">正常</span>
                                                 <button type="button" class="btn btn-danger btn-xs">锁定</button>
                                             </div>
                                         </div>
@@ -336,14 +336,14 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">手机号</label>
                                             <div class="col-sm-9">
-                                                <span class="mobile" style="display:inline-block;padding-right:10px;"><?php echo $arr['uId']; ?></span>
+                                                <span class="mobile" style="display:inline-block;padding-right:10px;">13544654657</span>
                                                 <button type="button" class="btn btn-warning btn-xs">更换</button>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">信用值</label>
                                             <div class="col-sm-8">
-                                                <span class="credit" style="display:inline-block;padding-right:10px;"><?php echo $arr['honor']['Honorval']; ?></span>
+                                                <span class="credit" style="display:inline-block;padding-right:10px;">250</span>
                                                 <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#credit">提升</button>
                                             </div>
                                         </div>
@@ -354,7 +354,7 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">店铺状态</label>
                                             <div class="col-sm-9">
-                                                <span class="account" style="display:inline-block;padding-right:10px;"><?php echo $arr['shopStatus']; ?></span>
+                                                <span class="account" style="display:inline-block;padding-right:10px;">已开通</span>
                                                 <a href="/" title="" class="btn btn-primary btn-xs">查看</a>
                                             </div>
                                         </div>
@@ -367,7 +367,7 @@
                                          <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">用户标签</label>
                                             <div class="col-sm-9">
-                                                <?php echo $arr['resume']['UserTag']; ?>
+                                                手机控
                                             </div>
                                         </div>
                                     </div>
@@ -381,13 +381,13 @@
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">收藏量</label>
                                             <div class="col-sm-8">
-                                                <?php echo count($arr['collection']); ?>
+                                                250
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">关注量</label>
                                             <div class="col-sm-9">
-                                                <?php echo count($arr['follow']); ?>
+                                                250
                                             </div>
                                         </div>
                                     </div>
@@ -395,8 +395,8 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">推荐人</label>
                                             <div class="col-sm-9">
-                                                <span style="display:inline-block;padding-right:10px;"><?php echo $arr['recommend']['CoverId']['nickName']; ?></span>
-                                                <a href="<?php echo url('admin/index/user_info',array('id'=>$arr['recommend']['CoverId']['uId'])); ?>" class="btn btn-warning btn-xs">查看</a>
+                                                <span style="display:inline-block;padding-right:10px;">XXX</span>
+                                                <button type="button" class="btn btn-warning btn-xs">查看</button>
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
