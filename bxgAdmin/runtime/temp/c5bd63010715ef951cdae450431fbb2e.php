@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509505385;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509506979;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -73,12 +73,35 @@
                             <li>
                                 <a class="J_menuItem" href="<?php echo url('admin/index/user_list'); ?>">用户信息</a>
                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="<?php echo url('admin/index/area'); ?>" data-index="0">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">区域站点管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="user_list.html">会员管理</a>
+                                <a class="J_menuItem" href="/">添加站点</a>
                             </li>
                         </ul>
                     </li>
-                    
+                    <li>
+                        <a class="J_menuItem" href="<?php echo url('admin/index/index_v'); ?>" data-index="0">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">数据统计</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="<?php echo url('admin/index/count_user'); ?>">用户统计</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="<?php echo url('admin/index/count_seller'); ?>">商家统计</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>

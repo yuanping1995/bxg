@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\count_seller.html";i:1509507971;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -11,9 +12,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="shortcut icon" href="{$Think.__APPROOT__}/favicon.ico">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo __APPROOT__; ?>/favicon.ico">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
     <!-- Morris -->
     <!-- <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet"> -->
@@ -21,8 +22,8 @@
     <!-- Gritter -->
     <!-- <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet"> -->
 
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
 
 </head>
 
@@ -199,17 +200,17 @@
     </div>
 
     <!-- 全局js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/jquery.min.js?v=2.1.4"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- ECharts -->
     <!-- <script src="js/plugins/echarts/echarts-all.js"></script> -->
     <script src="http://www.echartsjs.com/gallery/vendors/echarts/echarts-all-3.js?_v_=1506498317457"></script>
     
 
     <!-- 自定义js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/content.js?v=1.0.0"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/content.js?v=1.0.0"></script>
 
-    <script src="{$Think.__APPROOT__}/static/admin/js/demo/user-line.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/user-line.js"></script>
 
 
 
