@@ -40,6 +40,10 @@ class info extends Model
          $recommend = $this->hasOne('Recommend','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
          return $recommend;
      }
+     public function asset(){
+         $asset = $this->hasOne('Asset','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+         return $asset;
+     }
 
 
 }

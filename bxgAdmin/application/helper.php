@@ -175,3 +175,21 @@ function shopStatus($arr){
     return $arr;
 }
 
+/**
+ * @param $arr
+ * @return string
+ */
+function is_null1($arr){
+    $num = count($arr);
+    foreach ( $arr as $key=>$val) {
+        if(!empty($val)){
+            $arr = "0001";
+            break;
+        }else{
+            $arr = '1111';
+        }
+    }
+    return $arr;
+}
+
+
