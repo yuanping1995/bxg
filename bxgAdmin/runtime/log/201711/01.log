@@ -139,3 +139,30 @@
 [ sql ] [ SQL ] SELECT * FROM `user_collection` WHERE  `uId` = 20144230042 [ RunTime:0.000000s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `user_agreement` [ RunTime:0.149008s ]
 [ sql ] [ SQL ] SELECT * FROM `user_agreement` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-01T09:22:52+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin
+[ info ] 127.0.0.5/index.php/admin [运行时间：0.110006s][吞吐率：9.09req/s] [内存消耗：1,010.68kb] [文件加载：43]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [0]语法解析错误: syntax error, unexpected '<<' (T_SL), expecting '{'[D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php:7]
