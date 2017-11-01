@@ -17,32 +17,34 @@ class Ajaxadmin extends \think\Controller
     /**
      * 修改头像的ajax操作
      */
-    public function ModifyAvatar(){
-<<<<<<< HEAD
-=======
+    public function ModifyAvatar()
+    {
+
         $base64_img = trim(input('post.img'));
         $up_dir = './upload/';//存放在当前目录的upload文件夹下
         $U['uId'] = input("post.uId");
-    
-        if(!file_exists($up_dir)){
-            mkdir($up_dir,0777);
+
+        if (!file_exists($up_dir)) {
+            mkdir($up_dir, 0777);
         }
-        if(preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_img, $result)){
+        if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_img, $result)) {
             $type = $result[2];
-            if(in_array($type,array('pjpeg','jpeg','jpg','gif','bmp','png'))){
-                $new_file = $up_dir.date('YmdHis_').'.'.$type;
-                if(file_put_contents($new_file, base64_decode(str_replace($result[1], '', $base64_img)))){
+            if (in_array($type, array('pjpeg', 'jpeg', 'jpg', 'gif', 'bmp', 'png'))) {
+                $new_file = $up_dir . date('YmdHis_') . '.' . $type;
+                if (file_put_contents($new_file, base64_decode(str_replace($result[1], '', $base64_img)))) {
                     $img_path = str_replace('../../..', '', $new_file);
                     $path = new info();
-                  
-                    $rest = $path->where($U)->update(['Icon'=>$img_path]);
-                    if(!empty($rest)){
-                        $arr = array('state'=>'1111');
-                    }else{
-                        $arr = array('state'=>'1114');
-                    }
->>>>>>> 3f4668771204e239b6516b619a37aa60d17089ba
 
+                    $rest = $path->where($U)->update(['Icon' => $img_path]);
+                    if (!empty($rest)) {
+                        $arr = array('state' => '1111');
+                    } else {
+                        $arr = array('state' => '1114');
+                    }
+                }
+
+            }
+        }
     }
 
     /**
