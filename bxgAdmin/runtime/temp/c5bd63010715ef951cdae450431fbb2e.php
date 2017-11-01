@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509519149;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509523916;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -58,13 +58,13 @@
                         </div>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="<?php echo url('admin/index/index_v'); ?>" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">主页</span>
                         </a>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="<?php echo url('admin/index/index_v'); ?>" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">用户管理</span>
                             <span class="fa arrow"></span>
@@ -76,7 +76,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="<?php echo url('admin/index/index_v'); ?>" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">订单管理</span>
                             <span class="fa arrow"></span>
@@ -88,7 +88,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="<?php echo url('admin/index/area'); ?>" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/areasite/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">区域站点管理</span>
                             <span class="fa arrow"></span>
@@ -100,17 +100,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="<?php echo url('admin/index/index_v'); ?>" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">数据统计</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="<?php echo url('admin/index/count_user'); ?>">用户统计</a>
+                                <a class="J_menuItem" href="<?php echo url('admin/count/count_user'); ?>">用户统计</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="<?php echo url('admin/index/count_seller'); ?>">商家统计</a>
+                                <a class="J_menuItem" href="<?php echo url('admin/count/count_seller'); ?>">商家统计</a>
                             </li>
                         </ul>
                     </li>
@@ -213,7 +213,7 @@
                 </button>
                 <nav class="page-tabs J_menuTabs">
                     <div class="page-tabs-content">
-                        <a href="javascript:;" class="active J_menuTab" data-id="<?php echo url('admin/index/index_v'); ?>">首页</a>
+                        <a href="javascript:;" class="active J_menuTab" data-id="<?php echo url('admin/count/index'); ?>">首页</a>
                     </div>
                 </nav>
                 <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
@@ -232,10 +232,10 @@
                         </li>
                     </ul>
                 </div>
-                <a href="<?php echo url('admin/index/login'); ?>" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+                <a href="<?php echo url('admin/login/index'); ?>" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
             </div>
             <div class="row J_mainContent" id="content-main">
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="<?php echo url('admin/index/index_v'); ?>" frameborder="0" data-id="<?php echo url('admin/index/index_v'); ?>" seamless></iframe>
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="<?php echo url('admin/count/index'); ?>" frameborder="0" data-id="<?php echo url('admin/count/index'); ?>" seamless></iframe>
             </div>
             <div class="footer">
                 <div class="pull-right">&copy; 2014-2015 <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a>

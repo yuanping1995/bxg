@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\order\order_list.html";i:1509519054;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,13 +11,13 @@
     <meta name="description" content="">
 
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <!-- <link href="{$Think.__APPROOT__}/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet"> -->
-    <!-- <link href="{$Think.__APPROOT__}/static/admin/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet"> -->
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <!-- <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet"> -->
+    <!-- <link href="<?php echo __APPROOT__; ?>/static/admin/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet"> -->
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
         
     </style>
@@ -27,7 +28,7 @@
     <div class="wrapper wrapper-content animated"> 
         <div class="ibox float-e-margins">
             <div class="ibox-content"> 
-                <a href="{:url('admin/index/user_list')}" class="btn btn-primary">返回上一级</a>
+                <a href="<?php echo url('admin/index/user_list'); ?>" class="btn btn-primary">返回上一级</a>
                 <div class="clients-list">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#order-1">所有订单</a></li>
@@ -130,25 +131,25 @@
     </div>
 
     <!-- 全局js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/jquery.min.js?v=2.1.4"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- Bootstrap table -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
      <!-- iCheck -->
-    <!-- <script src="{$Think.__APPROOT__}/static/admin/js/plugins/iCheck/icheck.min.js"></script> -->
+    <!-- <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/iCheck/icheck.min.js"></script> -->
     <!-- Fancy box 图片放大-->
-    <!-- <script src="{$Think.__APPROOT__}/static/admin/js/plugins/fancybox/jquery.fancybox.js"></script> -->
+    <!-- <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/fancybox/jquery.fancybox.js"></script> -->
 
      <!-- 以下自定义js -->
-    <!-- <script src="{$Think.__APPROOT__}/static/admin/js/content.js?v=1.0.0"></script> -->
+    <!-- <script src="<?php echo __APPROOT__; ?>/static/admin/js/content.js?v=1.0.0"></script> -->
     <!-- Peity -->
-    <!-- <script src="{$Think.__APPROOT__}/static/admin/js/demo/bootstrap-table-demo.js"></script> -->
+    <!-- <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/bootstrap-table-demo.js"></script> -->
     <!-- 图片上传 -->
-    <!-- <script src="{$Think.__APPROOT__}/static/admin/js/demo/compress.js"></script> -->
+    <!-- <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/compress.js"></script> -->
 
-    <script type="text/javascript" src="{$Think.__APPROOT__}/static/admin/js/demo/order-list.js"></script>
+    <script type="text/javascript" src="<?php echo __APPROOT__; ?>/static/admin/js/demo/order-list.js"></script>
     <script>
         // $(document).ready(function () {
         //     $('.i-checks').iCheck({

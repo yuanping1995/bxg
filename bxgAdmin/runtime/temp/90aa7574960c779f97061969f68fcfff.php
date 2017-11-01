@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509522470;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509524074;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -1047,7 +1047,7 @@
                                                 <td>2000</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-warning">待付款</span></td>
-                                                <td><a href="<?php echo url('admin/index/order_detail'); ?>" class="label label-info">查看</a></td>
+                                                <td><a href="<?php echo url('admin/order/order_detail'); ?>" class="label label-info">查看</a></td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -1057,7 +1057,7 @@
                                                 <td>12345</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                                                <td><a href="<?php echo url('admin/index/order_detail'); ?>" class="label label-info">查看</a></td>
+                                                <td><a href="<?php echo url('admin/order/order_detail'); ?>" class="label label-info">查看</a></td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -1067,7 +1067,7 @@
                                                 <td>12345</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                                                <td><a href="<?php echo url('admin/index/order_detail'); ?>" class="label label-info">查看</a></td>
+                                                <td><a href="<?php echo url('admin/order/order_detail'); ?>" class="label label-info">查看</a></td>
                                             </tr>
                                         </tbody>
                                     </table>
