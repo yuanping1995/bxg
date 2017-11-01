@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509516502;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509517194;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -83,7 +83,7 @@
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="<?php echo url('admin/index/count_user'); ?>">订单列表</a>
+                                <a class="J_menuItem" href="<?php echo url('admin/index/order_list'); ?>">订单列表</a>
                             </li>
                         </ul>
                     </li>
