@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509506979;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509516502;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -72,6 +72,18 @@
                         <ul class="nav nav-second-level">
                             <li>
                                 <a class="J_menuItem" href="<?php echo url('admin/index/user_list'); ?>">用户信息</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="<?php echo url('admin/index/index_v'); ?>" data-index="0">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">订单管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="<?php echo url('admin/index/count_user'); ?>">订单列表</a>
                             </li>
                         </ul>
                     </li>
@@ -220,7 +232,7 @@
                         </li>
                     </ul>
                 </div>
-                <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+                <a href="<?php echo url('admin/index/login'); ?>" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
             </div>
             <div class="row J_mainContent" id="content-main">
                 <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="<?php echo url('admin/index/index_v'); ?>" frameborder="0" data-id="<?php echo url('admin/index/index_v'); ?>" seamless></iframe>

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\login.html";i:1509516661;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,11 +9,11 @@
     <title>H+ 后台主题UI框架 - 登录</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap.min.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/style.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/login.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/login.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
@@ -29,7 +30,7 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-2" style="height:80px;">
-                <img src="{$Think.__APPROOT__}/static/admin/img/logo_1.png" style="height:100%;">
+                <img src="<?php echo __APPROOT__; ?>/static/admin/img/logo_1.png" style="height:100%;">
             </div>
             <div class="col-sm-8" style="padding-top:30px;">
                 后台管理系统
@@ -64,7 +65,7 @@
             </div>
         </div>
     </div>
-    <script src="{$Think.__APPROOT__}/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
     <script type="text/javascript">
         function empty(){
             $(".error-tip").html('');

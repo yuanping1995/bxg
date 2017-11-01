@@ -5,6 +5,10 @@ use app\admin\model\info;
 
 class Index extends \think\Controller
 {
+// 登录
+    public function login(){
+        return $this->fetch();
+    }
 // 首页框架
     public function index()
     {
