@@ -55,3 +55,37 @@ function & load_qqpay($type = '') {
     }
     return $qqpay[$index];
 }
+/**二维数组相同字段求和
+ * @param $arr二维数组
+ * @param $cont 求和的字段
+ * @param $ver 满足要求的数组
+ * @return int
+ */
+
+function arraySum($arr,$cont,$ver){
+    $i = count($arr);
+    $num=0;
+    foreach ($arr as $key =>$val)
+    {   if(in_array($val['Status'], $ver))
+    {
+        $num+=$val[$cont];
+    }
+    }
+    return $num;
+}
+
+/**
+ * @param $arr 比较的数据
+ * @return string
+ */
+function Membership($arr){
+    switch ($arr)
+    {
+        case 1:  $arr = "普通";  break;
+        case 2:  $arr = "vip";   break;
+        case 3:  $arr = "svip";  break;
+        default: $arr = "ovip";
+    }
+    return $arr;
+}
+/**/

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509441592;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,13 +11,13 @@
     <meta name="description" content="">
 
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
         .float-e-margins .btn{
             margin:0;
@@ -238,19 +239,19 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">用户ID</label>
                                             <div class="col-sm-9">
-                                                {$arr.uId}
+                                                <?php echo $arr['uId']; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-3 control-label">昵称</label>
                                             <div class="col-sm-8">
-                                                {$arr.nickName}
+                                                <?php echo $arr['nickName']; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">注册时间</label>
                                             <div class="col-sm-7">
-                                                {$arr['Regtime']|date="Y/m/d H:i:s",###}
+                                                <?php echo date("Y/m/d H:i:s",$arr['Regtime']); ?>
                                             </div>
                                         </div>    
                                     </div>
@@ -258,7 +259,7 @@
                                        <div class="col-sm-4">
                                             <label class="col-sm-4 control-label">会员等级</label>
                                             <div class="col-sm-8">
-                                                <span class="upower" style="display:inline-block;padding-right:10px;">{$arr['Upower']}</span>
+                                                <span class="upower" style="display:inline-block;padding-right:10px;"><?php echo $arr['Upower']; ?></span>
                                                 <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#upGrade">升级</button>
                                             </div>
                                         </div>
@@ -1106,23 +1107,23 @@
     </div>
 
     <!-- 全局js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/jquery.min.js?v=2.1.4"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- Bootstrap table -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
      <!-- iCheck -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/iCheck/icheck.min.js"></script>
     <!-- Fancy box 图片放大-->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/fancybox/jquery.fancybox.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/fancybox/jquery.fancybox.js"></script>
 
      <!-- 以下自定义js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/content.js?v=1.0.0"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/content.js?v=1.0.0"></script>
     <!-- Peity -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/demo/bootstrap-table-demo.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/bootstrap-table-demo.js"></script>
     <!-- 图片上传 -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/demo/compress.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/compress.js"></script>
 
    
     <script>

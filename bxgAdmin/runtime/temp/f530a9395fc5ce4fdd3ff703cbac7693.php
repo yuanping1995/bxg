@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\user_list.html";i:1509436093;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -9,13 +10,13 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="shortcut icon" href="{$Think.__APPROOT__}/favicon.ico">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo __APPROOT__; ?>/favicon.ico">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
         .float-e-margins .btn{margin:1px 2px;}
         td a.btn{padding:3px 5px;border:none;color: #fff;}
@@ -151,29 +152,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {foreach name="arr" id="vo"}
+                                    <?php if(is_array($arr) || $arr instanceof \think\Collection || $arr instanceof \think\Paginator): if( count($arr)==0 ) : echo "" ;else: foreach($arr as $key=>$vo): ?>
 
 
                                         <tr>
                                             <td></td>
-                                            <td>{$vo.id}</td>
-                                            <td>{$vo['nickName']}</td>
+                                            <td><?php echo $vo['id']; ?></td>
+                                            <td><?php echo $vo['nickName']; ?></td>
                                             <td>
-                                                <span class="avatar"><img src="{$vo['Icon']}"/></span></td>
+                                                <span class="avatar"><img src="<?php echo $vo['Icon']; ?>"/></span></td>
                                             <td>手机号</td>
-                                            <td>{$vo['wallt']['Total_fee']}</td>
-                                            <td>{$vo['basic_oder']|count}</td>
-                                            <td>{$vo.0}</td>
-                                            <td>{$vo.Upower}</td>
+                                            <td><?php echo $vo['wallt']['Total_fee']; ?></td>
+                                            <td><?php echo count($vo['basic_oder']); ?></td>
+                                            <td><?php echo $vo['0']; ?></td>
+                                            <td><?php echo $vo['Upower']; ?></td>
                                             <td>2017/10/09</td>
                                             <td>
-                                                <a href="{:url('admin/index/user_info',array('id'=>$vo.uId))}" class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></a>
+                                                <a href="<?php echo url('admin/index/user_info',array('id'=>$vo['uId'])); ?>" class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></a>
                                                 <a class="btn btn-success" aria-hidden="true" title="充值" data-toggle="modal" data-target="#recharge"><i class="glyphicon glyphicon-usd"></i></a>
                                                 <a class="btn btn-danger" aria-hidden="true"  title="设置角色" data-toggle="modal" data-target="#set"><i class="glyphicon glyphicon-star"></i></a>
                                             </td>
                                             <td>兼职</td>
                                         </tr>
-                                    {/foreach}
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -187,21 +188,21 @@
     </div>
 
     <!-- 全局js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/jquery.min.js?v=2.1.4"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- Bootstrap table -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
     <!-- iCheck -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/iCheck/icheck.min.js"></script>
 
     <!-- 以下是自定义js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/content.js?v=1.0.0"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/content.js?v=1.0.0"></script>
     <!-- Peity -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/demo/bootstrap-table-demo.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/bootstrap-table-demo.js"></script>
     <!-- 图片上传 -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/demo/compress.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/compress.js"></script>
     
     <script>
         $(document).ready(function () {
