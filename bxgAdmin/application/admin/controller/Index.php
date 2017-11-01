@@ -4,17 +4,19 @@ namespace app\admin\controller;
 use app\admin\model\info;
 
 class Index extends \think\Controller
-<<<<<<< HEAD
 {
-=======
-{	
+    function _initialize(){
+       return $this->fetch();
+
+
+    }
     // 登录
      public function login()
     {
        return $this->fetch();
 
     }
->>>>>>> 47179af9004878bdc19e518abb19506a3180cfff
+
 	// 首页框架
     public function index()
     {
@@ -37,10 +39,9 @@ class Index extends \think\Controller
     {
         $list = info::with("Wallt,basic_Oder")->paginate(3)->toArray();
         $list = $list['data'];
-        $arr = array(2,3,4,5,);
+        $arr = array(2, 3, 4, 5,);
         $i = 0;
-        foreach ($list as $key => $val)
-        {
+        foreach ($list as $key => $val) {
 //            switch ($list[$key]['Upower'])
 //            {
 //                case 1:  $list[$key]['Upower'] = "普通";  break;
@@ -48,18 +49,14 @@ class Index extends \think\Controller
 //                case 3:  $list[$key]['Upower'] = "svip";  break;
 //                default: $list[$key]['Upower'] = "ovip";
 //            }
-            $list[$key]['Upower'] =  Membership($list[$key]['Upower']);
-              $num[$key]= arraySum($val['basic_oder'], 'Total_fee',$arr);
-              Array_unshift($list[$key], $num[$key]);
+            $list[$key]['Upower'] = Membership($list[$key]['Upower']);
+            $num[$key] = arraySum($val['basic_oder'], 'Total_fee', $arr);
+            Array_unshift($list[$key], $num[$key]);
         }
-        $this->assign('arr',$list);
-    	return $this->fetch();
+        $this->assign('arr', $list);
+        return $this->fetch();
+
     }
-<<<<<<< HEAD
-    //
-=======
-    // 用户信息
->>>>>>> 47179af9004878bdc19e518abb19506a3180cfff
     public function user_info(){
         $uId['uId']  = input("id");
         $list = info::with("honor,follow,Collection,agreement")->where($uId)->find()->toArray();

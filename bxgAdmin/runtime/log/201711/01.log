@@ -166,3 +166,158 @@
 )
 [ info ] [ LOG ] INIT File
 [ error ] [0]语法解析错误: syntax error, unexpected '<<' (T_SL), expecting '{'[D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php:7]
+---------------------------------------------------------------
+[ 2017-11-01T09:33:45+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin
+[ info ] 127.0.0.5/index.php/admin [运行时间：0.101006s][吞吐率：9.90req/s] [内存消耗：1,419.92kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-01T09:33:45+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/index/index_v.html
+[ info ] 127.0.0.5/index.php/admin/index/index_v.html [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：1,260.70kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index_v',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\index_v.html [ array (
+) ]
+[ info ] [ RUN ] app\admin\controller\Index->index_v[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\index_v.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-01T09:33:49+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/index/count_user.html
+[ info ] 127.0.0.5/index.php/admin/index/count_user.html [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：1,453.44kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'count_user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\count_user.html [ array (
+) ]
+[ info ] [ RUN ] app\admin\controller\Index->count_user[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\count_user.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-01T09:33:49+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/index/img/a3.jpg
+[ info ] 127.0.0.5/index.php/admin/index/img/a3.jpg [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：1,211.31kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin/index/count_user.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\img.html[D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2017-11-01T09:33:50+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/index/count_seller.html
+[ info ] 127.0.0.5/index.php/admin/index/count_seller.html [运行时间：0.040002s][吞吐率：25.00req/s] [内存消耗：1,344.95kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'count_seller',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\count_seller.html [ array (
+) ]
+[ info ] [ RUN ] app\admin\controller\Index->count_seller[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\count_seller.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
