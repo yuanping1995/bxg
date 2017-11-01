@@ -18,7 +18,7 @@
     <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
     <link href="{$Think.__APPROOT__}/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
-        
+        .tab-pane{margin-top:20px;}
     </style>
 
 </head>
@@ -40,8 +40,8 @@
                         <li class=""><a data-toggle="tab" href="#order-8">交易取消订单</a></li>
                     </ul>
                     <div class="tab-content" >
-                        <!-- 所有订单 -->
-                        <div id="order-1" class="tab-pane active" style="margin-top:20px;">
+<!-- .................所有订单 -->
+                        <div id="order-1" class="tab-pane active">
                             <div class="example-wrap">
                                 <div class="example">
                                     <div class="btn-group hidden-xs" id="allOrderToolbar" role="group">
@@ -81,10 +81,12 @@
                                 </div>
                             </div>
                         </div>
+<!-- .................end 所有订单 -->
+<!-- .................待发货订单 -->
                         <div id="order-2" class="tab-pane">
                             <div class="example-wrap">
                                 <div class="example">
-                                    <div class="btn-group hidden-xs" id="closeToolbar" role="group">
+                                    <div class="btn-group hidden-xs" id="waitSendToolbar" role="group">
                                         <button type="button" class="btn btn-outline btn-default">
                                             <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                                         </button>
@@ -92,7 +94,7 @@
                                             <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                                         </button>
                                     </div>
-                                    <table id="close" data-height="580" data-mobile-responsive="true">
+                                    <table id="waitSend" data-height="580" data-mobile-responsive="true">
                                         <thead>
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
@@ -121,7 +123,265 @@
                                 </div>
                             </div>
                         </div>
-                        
+<!-- .................end 待发货订单 --> 
+<!-- .................待付款订单 --> 
+                        <div id="order-3" class="tab-pane">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div class="btn-group hidden-xs" id="waitPayToolbar" role="group">
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <table id="waitPay" data-height="580" data-mobile-responsive="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="uid">用户ID</th>
+                                                <th data-field="closeid">亲密人ID</th>
+                                                <th data-field="closetype">亲密类型</th>
+                                                <th data-field="intimacy">亲密度</th>
+                                                <th data-field="intime">加入时间</th>
+                                                <th data-field="closeStadus">亲密状态</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>1234</td>
+                                                <td>1235</td>
+                                                <td>家人</td>
+                                                <td>10</td>
+                                                <td>2017/10/10</td>
+                                                <td><span class="label label-primary">已核实</span></td>
+                                            </tr>
+                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+<!-- .................end 待付款订单 --> 
+
+<!-- .................待收货订单 --> 
+                        <div id="order-4" class="tab-pane">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div class="btn-group hidden-xs" id="waitGetToolbar" role="group">
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <table id="waitGet" data-height="580" data-mobile-responsive="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="uid">用户ID</th>
+                                                <th data-field="closeid">亲密人ID</th>
+                                                <th data-field="closetype">亲密类型</th>
+                                                <th data-field="intimacy">亲密度</th>
+                                                <th data-field="intime">加入时间</th>
+                                                <th data-field="closeStadus">亲密状态</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>1234</td>
+                                                <td>1235</td>
+                                                <td>家人</td>
+                                                <td>10</td>
+                                                <td>2017/10/10</td>
+                                                <td><span class="label label-primary">已核实</span></td>
+                                            </tr>
+                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+<!-- .................end 待收货订单 --> 
+
+<!-- .................待评价订单 --> 
+                        <div id="order-5" class="tab-pane">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div class="btn-group hidden-xs" id="waitEvaToolbar" role="group">
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <table id="waitEva" data-height="580" data-mobile-responsive="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="uid">用户ID</th>
+                                                <th data-field="closeid">亲密人ID</th>
+                                                <th data-field="closetype">亲密类型</th>
+                                                <th data-field="intimacy">亲密度</th>
+                                                <th data-field="intime">加入时间</th>
+                                                <th data-field="closeStadus">亲密状态</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>1234</td>
+                                                <td>1235</td>
+                                                <td>家人</td>
+                                                <td>10</td>
+                                                <td>2017/10/10</td>
+                                                <td><span class="label label-primary">已核实</span></td>
+                                            </tr>
+                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+<!-- .................end 待评价订单 --> 
+
+<!-- .................退货/返修订单 --> 
+                        <div id="order-6" class="tab-pane">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div class="btn-group hidden-xs" id="returnToolbar" role="group">
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <table id="return" data-height="580" data-mobile-responsive="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="uid">用户ID</th>
+                                                <th data-field="closeid">亲密人ID</th>
+                                                <th data-field="closetype">亲密类型</th>
+                                                <th data-field="intimacy">亲密度</th>
+                                                <th data-field="intime">加入时间</th>
+                                                <th data-field="closeStadus">亲密状态</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>1234</td>
+                                                <td>1235</td>
+                                                <td>家人</td>
+                                                <td>10</td>
+                                                <td>2017/10/10</td>
+                                                <td><span class="label label-primary">已核实</span></td>
+                                            </tr>
+                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+<!-- .................end 退货/返修订单 --> 
+
+<!-- .................交易完成订单 --> 
+                        <div id="order-7" class="tab-pane">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div class="btn-group hidden-xs" id="successToolbar" role="group">
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <table id="success" data-height="580" data-mobile-responsive="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="uid">用户ID</th>
+                                                <th data-field="closeid">亲密人ID</th>
+                                                <th data-field="closetype">亲密类型</th>
+                                                <th data-field="intimacy">亲密度</th>
+                                                <th data-field="intime">加入时间</th>
+                                                <th data-field="closeStadus">亲密状态</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>1234</td>
+                                                <td>1235</td>
+                                                <td>家人</td>
+                                                <td>10</td>
+                                                <td>2017/10/10</td>
+                                                <td><span class="label label-primary">已核实</span></td>
+                                            </tr>
+                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+<!-- .................end 交易完成订单 --> 
+
+<!-- .................交易取消订单 --> 
+                        <div id="order-8" class="tab-pane">
+                            <div class="example-wrap">
+                                <div class="example">
+                                    <div class="btn-group hidden-xs" id="cancelToolbar" role="group">
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-default">
+                                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <table id="cancel" data-height="580" data-mobile-responsive="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="uid">用户ID</th>
+                                                <th data-field="closeid">亲密人ID</th>
+                                                <th data-field="closetype">亲密类型</th>
+                                                <th data-field="intimacy">亲密度</th>
+                                                <th data-field="intime">加入时间</th>
+                                                <th data-field="closeStadus">亲密状态</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>1234</td>
+                                                <td>1235</td>
+                                                <td>家人</td>
+                                                <td>10</td>
+                                                <td>2017/10/10</td>
+                                                <td><span class="label label-primary">已核实</span></td>
+                                            </tr>
+                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+<!-- .................end 交易取消订单 --> 
+
                     </div>
                 </div>
             </div>
