@@ -5,21 +5,24 @@ use app\admin\model\info;
 use app\admin\model\Recommend;
 class Index extends \think\Controller
 {
-	// 首页框架
+// 登录
+    public function login(){
+        return $this->fetch();
+    }
+// 首页框架
     public function index()
     {
        return $this->fetch();
-
     }
-    //
+//首页数据展示
     public function index_v()
     {
        return $this->fetch();
     }
+
+// 用户管理
+
     // 用户列表
-    /*
-     *
-     */
     public function user_list()
     {
         $list = info::with("Wallt,basic_Oder")->paginate(3)->toArray();
@@ -42,7 +45,8 @@ class Index extends \think\Controller
         $this->assign('arr',$list);
     	return $this->fetch();
     }
-    //
+
+    //用户信息
     public function user_info(){
         $uId['uId']  = input("id");
         $list = info::with("honor,follow,Collection,agreement,resume,recommend")->where($uId)->find()->toArray();
@@ -61,7 +65,6 @@ class Index extends \think\Controller
         $this->assign('arr',$list);
         return $this->fetch();
     }
-<<<<<<< HEAD
 
 // 订单管理
 
@@ -70,8 +73,6 @@ class Index extends \think\Controller
         return $this->fetch();
     }
     // 订单信息
-=======
->>>>>>> 8c3d0b7dd9a45c73ab94980d206b535a2d472435
     public function order_detail(){
         return $this->fetch();
     }
