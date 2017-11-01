@@ -5,21 +5,23 @@ use app\admin\model\info;
 
 class Index extends \think\Controller
 {
-	// 首页框架
+// 首页框架
     public function index()
     {
        return $this->fetch();
 
     }
-    //
+
+ //后台首页
+ //
     public function index_v()
     {
        return $this->fetch();
     }
+
+// 用户管理
+    
     // 用户列表
-    /*
-     *
-     */
     public function user_list()
     {
         $list = info::with("Wallt,basic_Oder")->paginate(3)->toArray();
@@ -42,14 +44,21 @@ class Index extends \think\Controller
         $this->assign('arr',$list);
     	return $this->fetch();
     }
-    //
+    //用户信息
     public function user_info(){
         $uId['uId']  = input("id");
         $list = info::with("honor,follow,Collection,agreement")->where($uId)->find()->toArray();
-
         $list['Upower'] =  Membership($list['Upower']);
-
         $this->assign('arr',$list);
+        return $this->fetch();
+    }
+
+// 订单管理
+
+    // 订单列表
+    
+    // 订单信息
+    public function order_detail(){
         return $this->fetch();
     }
 }
