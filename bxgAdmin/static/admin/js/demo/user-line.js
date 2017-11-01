@@ -364,7 +364,7 @@ $(function () {
     $(window).resize(viewCharts.resize);
 
     // 用户地区分布
-    $.get('js/china.json', function (chinaJson) {
+    $.get('../../../static/admin/js/china.json', function (chinaJson) {
         console.log(chinaJson.features[0].properties.cp);
         echarts.registerMap('china', chinaJson);
         var areaCharts = echarts.init(document.getElementById('user-area'));

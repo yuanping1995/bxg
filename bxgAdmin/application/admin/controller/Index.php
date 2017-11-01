@@ -4,7 +4,17 @@ namespace app\admin\controller;
 use app\admin\model\info;
 
 class Index extends \think\Controller
+<<<<<<< HEAD
 {
+=======
+{	
+    // 登录
+     public function login()
+    {
+       return $this->fetch();
+
+    }
+>>>>>>> 47179af9004878bdc19e518abb19506a3180cfff
 	// 首页框架
     public function index()
     {
@@ -16,6 +26,9 @@ class Index extends \think\Controller
     {
        return $this->fetch();
     }
+
+// 用户管理
+
     // 用户列表
     /*
      *
@@ -42,7 +55,11 @@ class Index extends \think\Controller
         $this->assign('arr',$list);
     	return $this->fetch();
     }
+<<<<<<< HEAD
     //
+=======
+    // 用户信息
+>>>>>>> 47179af9004878bdc19e518abb19506a3180cfff
     public function user_info(){
         $uId['uId']  = input("id");
         $list = info::with("honor,follow,Collection,agreement")->where($uId)->find()->toArray();
@@ -52,4 +69,16 @@ class Index extends \think\Controller
         $this->assign('arr',$list);
         return $this->fetch();
     }
+
+// 数据统计
+
+    // 用户统计
+    public function count_user(){
+        return $this->fetch();
+    }
+    // 商家统计
+    public function count_seller(){
+        return $this->fetch();
+    }
+
 }
