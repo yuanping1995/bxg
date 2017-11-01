@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\user_list.html";i:1509436093;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\user_list.html";i:1509518026;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -174,6 +174,7 @@
                                             </td>
                                             <td>兼职</td>
                                         </tr>
+
                                     <?php endforeach; endif; else: echo "" ;endif; ?>
                                     </tbody>
                                 </table>
