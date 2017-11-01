@@ -11,7 +11,7 @@ class Index extends \think\Controller
        return $this->fetch();
 
     }
-    //  
+    //
     public function index_v()
     {
        return $this->fetch();
