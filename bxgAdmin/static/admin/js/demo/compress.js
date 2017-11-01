@@ -1,13 +1,13 @@
-function photoCompress(file,w,objDiv){
+function photoCompress(file,w,objDiv,uid){
     var ready=new FileReader();
 /*开始读取指定的Blob对象或File对象中的内容. 当读取操作完成时,readyState属性的值会成为DONE,如果设置了onloadend事件处理程序,则调用之.同时,result属性中将包含一个data: URL格式的字符串以表示所读取文件的内容.*/
     ready.readAsDataURL(file);
     ready.onload=function(){
     	var re=this.result;
-        canvasDataURL(re,w,objDiv);
+        canvasDataURL(re,w,objDiv,uid);
     }
 }
-function canvasDataURL(re,w,objDiv){
+function canvasDataURL(re,w,objDiv,uid){
     var newImg=new Image();
     newImg.src=re;
     var imgWidth,imgHeight,offsetX=0,offsetY=0;
@@ -32,16 +32,20 @@ function canvasDataURL(re,w,objDiv){
         }
         ctx.drawImage(img,offsetX,offsetY,imgWidth,imgHeight);
         var base64=canvas.toDataURL("image/jpeg",1);
-        var imageSrc = document.createElement('img');
-        imageSrc.setAttribute('src',base64);
-    
+         
          //图片地址传给后台
-        console.log(base64);
-        if(typeof objDiv == "object"){
-            objDiv.appendChild(imageSrc);	
-//          objDiv.appendChild(canvas);
-        }else if(typeof objDiv=="function"){
-            objDiv(base64);
-        }
+        $.ajax({
+            type:"POST",
+            data:{uId:uid,img:base64},
+            url:"../../../../api/Ajaxadmin/ModifyAvatar",
+            // async:true,
+            success:function(state){
+
+                console.log(state);
+                objDiv.setAttribute('src',base64);
+            }
+
+        });
+
     }
 }

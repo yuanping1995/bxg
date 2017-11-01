@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509523916;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -15,11 +16,11 @@
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
 
-    <link rel="shortcut icon" href="{$Think.__APPROOT__}/favicon.ico"> 
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo __APPROOT__; ?>/favicon.ico"> 
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -57,37 +58,37 @@
                         </div>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="{:url('admin/count/index')}" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">主页</span>
                         </a>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="{:url('admin/count/index')}" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">用户管理</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="{:url('admin/index/user_list')}">用户信息</a>
+                                <a class="J_menuItem" href="<?php echo url('admin/index/user_list'); ?>">用户信息</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="{:url('admin/count/index')}" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">订单管理</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="{:url('admin/order/order_list')}">订单列表</a>
+                                <a class="J_menuItem" href="<?php echo url('admin/order/order_list'); ?>">订单列表</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="{:url('admin/areasite/index')}" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/areasite/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">区域站点管理</span>
                             <span class="fa arrow"></span>
@@ -99,17 +100,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="{:url('admin/count/index')}" data-index="0">
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">数据统计</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="{:url('admin/count/count_user')}">用户统计</a>
+                                <a class="J_menuItem" href="<?php echo url('admin/count/count_user'); ?>">用户统计</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="{:url('admin/count/count_seller')}">商家统计</a>
+                                <a class="J_menuItem" href="<?php echo url('admin/count/count_seller'); ?>">商家统计</a>
                             </li>
                         </ul>
                     </li>
@@ -212,7 +213,7 @@
                 </button>
                 <nav class="page-tabs J_menuTabs">
                     <div class="page-tabs-content">
-                        <a href="javascript:;" class="active J_menuTab" data-id="{:url('admin/count/index')}">首页</a>
+                        <a href="javascript:;" class="active J_menuTab" data-id="<?php echo url('admin/count/index'); ?>">首页</a>
                     </div>
                 </nav>
                 <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
@@ -231,10 +232,10 @@
                         </li>
                     </ul>
                 </div>
-                <a href="{:url('admin/login/index')}" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+                <a href="<?php echo url('admin/login/index'); ?>" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
             </div>
             <div class="row J_mainContent" id="content-main">
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="{:url('admin/count/index')}" frameborder="0" data-id="{:url('admin/count/index')}" seamless></iframe>
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="<?php echo url('admin/count/index'); ?>" frameborder="0" data-id="<?php echo url('admin/count/index'); ?>" seamless></iframe>
             </div>
             <div class="footer">
                 <div class="pull-right">&copy; 2014-2015 <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a>
@@ -339,15 +340,15 @@
     </div>
 
     <!-- 全局js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/jquery.min.js?v=2.1.4"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/layer/layer.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/layer/layer.min.js"></script>
 
     <!-- 自定义js -->
-    <script type="text/javascript" src="{$Think.__APPROOT__}/static/admin/js/hplus.js?v=4.1.0"></script>
-    <script type="text/javascript" src="{$Think.__APPROOT__}/static/admin/js/contabs.js"></script>
+    <script type="text/javascript" src="<?php echo __APPROOT__; ?>/static/admin/js/hplus.js?v=4.1.0"></script>
+    <script type="text/javascript" src="<?php echo __APPROOT__; ?>/static/admin/js/contabs.js"></script>
 
 </body>
 

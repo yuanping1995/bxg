@@ -5,20 +5,13 @@ use app\admin\model\info;
 use app\admin\model\Recommend;
 class Index extends \think\Controller
 {
-// 登录
-    public function login(){
-        return $this->fetch();
-    }
+
 // 首页框架
     public function index()
     {
        return $this->fetch();
     }
-//首页数据展示
-    public function index_v()
-    {
-       return $this->fetch();
-    }
+
 
 // 用户管理
 
@@ -66,28 +59,6 @@ class Index extends \think\Controller
         return $this->fetch();
     }
 
-// 订单管理
 
-    // 订单列表
-    public function order_list(){
-        return $this->fetch();
-    }
-    // 订单信息
-    public function order_detail(){
-        return $this->fetch();
-    }
-// 区域站点管理
-    public function area(){
-        return $this->fetch();
-    }
-    // 站点添加
-// 数据统计
-    //用户统计
-    public function count_user(){
-        return $this->fetch();
-    }
-    // 商家统计
-    public function count_seller(){
-        return $this->fetch();
-    }
+
 }
