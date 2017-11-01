@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509505300;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509506196;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -103,7 +103,7 @@
     <div class="wrapper wrapper-content animated"> 
         <div class="ibox float-e-margins">
             <div class="ibox-content"> 
-                <a href="user_list.html" class="btn btn-primary">返回上一级</a>
+                <a href="<?php echo url('admin/index/user_list'); ?>" class="btn btn-primary">返回上一级</a>
                 <div class="clients-list">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#tab-1">基本信息</a></li>
