@@ -329,9 +329,9 @@
                                             <div class="col-sm-8">
                                                 <span class="account" style="display:inline-block;padding-right:10px;">{$arr['Enable']}</span>
                                                 {if condition = "$arr['Enable'] eq '正常'"}
-                                                <button type="button" class="btn btn-danger btn-xs account_state" data-account="2">锁定</button>
+                                                <button type="button" class="btn btn-danger btn-xs account_state" data-account="1">锁定</button>
                                                 {else /}
-                                                <button type="button" class="btn btn-primary btn-xs account_state" data-account="1">正常</button>
+                                                <button type="button" class="btn btn-primary btn-xs account_state" data-account="2">正常</button>
                                                 {/if}
                                             </div>
                                         </div>
@@ -1274,21 +1274,23 @@
             $(".account_state").on('click',function(){
                 var num = Number($(this).attr("data-account"));
                 var uid = $('.imgUp').attr("data-uid");
+                var _this = $(this);
                 console.log(num +'-----'+uid);
                 $.ajax({
                     type:'post',
                     data:{uId:uid,enable:num},
                     url:'../../../../api/Ajaxadmin/Setenable',
                     success:function(data){
-                        console.log(data)
-                        var data = eval(data);
-
-                        if(data.state === "1111"){
-                            console.log(data.msg)
+                        if(num === 1){
+                            _this.removeClass('btn-danger').addClass('btn-primary').html("正常");
+                            $(".account").html("锁定");
+                        }else{
+                            _this.removeClass('btn-primary').addClass('btn-danger').html("锁定");
+                            $(".account").html("正常");
                         }
                     },
                     error:function(data){
-                        
+
                         swal({
                             title: "网络出现问题！",
                             type: "error"

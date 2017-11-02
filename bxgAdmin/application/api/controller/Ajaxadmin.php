@@ -127,7 +127,7 @@ class Ajaxadmin extends \think\Controller
             $U['Fundtype'] = '3';
             $U['Reckontime'] = time();
             $Water = $Watertb->insert($U);//增加用户流水
-            $logrest = $logtb->addlog($U['uId'],'系统后台充值',$time);//增加管理员日志
+            $logrest = $logtb->addlog(cookie('adminuid'),'系统后台充值',$time);//增加管理员日志
             if($Water &&  $wallt && $asset && $logrest){
                 Db::commit();// 提交事务
                 $state = '1111';
@@ -168,7 +168,7 @@ class Ajaxadmin extends \think\Controller
                 } else {
                     $uId['uId'] = $U['uId'];
                     $infores = info::where($uId)->update($U);
-                    $aa = session('adminuid');
+                    $aa = cookie('adminuid');
                     $logrest = $logtb->addlog($aa,'用户状态设置',$time);//增加管理员日志
                    
                 }
@@ -190,32 +190,41 @@ class Ajaxadmin extends \think\Controller
         }
     }
     public function Login(){
-        if (request()->isPost()) {
+        if (request()->isGet()) {
             return json("非法访问！");
         } else {
             $U['Mobilenumber'] = input('Mobilenumber');
-            $U['uPass'] = md5(input('pass'));
-            $info = info::with("Staff")->where($U)->find();
+            $U['uPass'] =  input('pass');
             $time = time();
-            if($info){
-                $info = $info->toArray();
-            }else{
-                $state = '0001';
-                $msg = "密码错误or账号错误";
-            }
-            if($info['staff']['Staffrole']==8){
-                cookie('adminuid', $info['uId']);
-                cookie('Staffrole', $info['staff']['Staffrole']);
-                $state = '1111';
-                $msg = "登录成功！";
-            }else{
-                $state = '0000';
-                $msg = "对不起你不能登录管理系统";
+            $cookie = "登录未成功";
+            if(is_null1($U)=='0000'){
+                $state = '0002';
+                $msg = "缺少必要参数";
+            }else {
+                $U['uPass'] = md5( $U['uPass']);
+                $info = info::with("Staff")->where($U)->find();
+                if ($info) {
+                    $info = $info->toArray();
+                    if ($info['staff']['Staffrole'] == 8) {
+                        cookie('adminuid', $info['uId'],3600);
+                        cookie('Staffrole', $info['staff']['Staffrole'],3600);
+                        $state = '1111';
+                        $msg = "登录成功！";
+                        $cookie = cookie('adminuid');
+                    } else {
+                        $state = '0000';
+                        $msg = "对不起你不能登录管理系统";
+                    }
+                } else {
+                    $state = '0001';
+                    $msg = "密码错误or账号错误";
+                }
             }
             $return = array(
                 'state'=>$state,
                 'msg'=>$msg,
-                'time'=>date("Y-m-d H:m:s",$time)
+                'time'=>date("Y-m-d H:m:s",$time),
+                'cookie'=>$cookie
             );
           return json($return);
         }

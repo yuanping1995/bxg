@@ -77,20 +77,19 @@
             }else if(pword === ''){
                 $(".error-tip").html("请输入密码！");
             }else{
-                window.location.href = 'index.html';
-                // $.ajax({
-                //     type:'post',
-                //     data:[uname:uname,pword:pword],
-                //     url:'',
-                //     success:function(data){
-                //         var dataJson = eval(data);
-                //         if(dataJson.flag){
-                //             window.location.href = '';
-                //         }else{
-                //             $(".error-tip").html(dataJson.msg);
-                //         }
-                //     }
-                // });
+                $.ajax({
+                    type:'post',
+                    data:{Mobilenumber:uname,pass:pword},
+                    url:'../../api/Ajaxadmin/Login',
+                    success:function(data){
+                        var data = eval(data);
+                        if(data.state === '1111'){
+                            window.location.href = '{$Think.__APPROOT__}/index.php/admin';
+                        }else{
+                            $(".error-tip").html(data.msg);
+                        }
+                    }
+                });
             }
         } 
     </script>

@@ -3,8 +3,20 @@ namespace app\admin\controller;
 
 use app\admin\model\info;
 use app\admin\model\Recommend;
+use think\Request;
+
 class Index extends \think\Controller
 {
+
+    function _initialize()
+    {
+        if(empty(cookie('adminuid'))){
+            header("Location:admin/login/index");
+        }else{
+          
+        }
+
+    }
 
 // 首页框架
     public function index()
