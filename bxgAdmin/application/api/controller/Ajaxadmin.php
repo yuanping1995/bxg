@@ -74,7 +74,7 @@ class Ajaxadmin extends \think\Controller
                 if ($rest && $rest1) {
                     $arr1 = '1111';
                 }else{
-                    $arr1 = '00001';
+                    $arr1 = '0001';
                 }
 
 
