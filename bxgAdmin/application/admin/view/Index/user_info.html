@@ -328,7 +328,11 @@
                                             <label class="col-sm-4 control-label">账户状态</label>
                                             <div class="col-sm-8">
                                                 <span class="account" style="display:inline-block;padding-right:10px;">{$arr['Enable']}</span>
-                                                <button type="button" class="btn btn-danger btn-xs">锁定</button>
+                                                {if condition = "$arr['Enable'] eq '正常'"}
+                                                <button type="button" class="btn btn-danger btn-xs account_state" data-account="2">锁定</button>
+                                                {else /}
+                                                <button type="button" class="btn btn-primary btn-xs account_state" data-account="1">正常</button>
+                                                {/if}
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
@@ -1266,6 +1270,33 @@
 
             });
 //............. end 设置角色
+//............. 账户状态
+            $(".account_state").on('click',function(){
+                var num = Number($(this).attr("data-account"));
+                var uid = $('.imgUp').attr("data-uid");
+                console.log(num +'-----'+uid);
+                $.ajax({
+                    type:'post',
+                    data:{uId:uid,enable:num},
+                    url:'../../../../api/Ajaxadmin/Setenable',
+                    success:function(data){
+                        console.log(data)
+                        var data = eval(data);
+
+                        if(data.state === "1111"){
+                            console.log(data.msg)
+                        }
+                    },
+                    error:function(data){
+                        
+                        swal({
+                            title: "网络出现问题！",
+                            type: "error"
+                        });
+                    }
+                });
+            });
+//............. end 账户状态
 
             // 图片上传
             $(".upAvactor").on('click',function(){

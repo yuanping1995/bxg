@@ -35,6 +35,7 @@ class Index extends \think\Controller
               $num[$key]= arraySum($val['basic_oder'], 'Total_fee',$arr);
               Array_unshift($list[$key], $num[$key]);
         }
+        // dump($list);
         $this->assign('arr',$list);
     	return $this->fetch();
     }

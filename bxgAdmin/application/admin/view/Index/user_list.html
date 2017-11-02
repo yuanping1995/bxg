@@ -66,13 +66,13 @@
                                      <div class="form-group draggable">
                                         <label class="col-sm-3 control-label">充值：</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="" class="form-control" id="recharge_money" placeholder="请输入充值金额">
+                                            <input type="text" name="recharge_money" class="form-control" id="recharge_money" placeholder="请输入充值金额">
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                                <button type="button" class="btn btn-primary saveRecharge" data-dismiss="modal">保存</button>
                             </div>
                             
                         </div>
@@ -168,14 +168,14 @@
                                             <td>
                                                 <span class="avatar"><img src="{$Think.__APPROOT__}{$vo['Icon']}"/></span></td>
                                             <td>{$vo.Mobilenumber}</td>
-                                            <td>{$vo['wallt']['Total_fee']}</td>
+                                            <td class="balance">{$vo['wallt']['Total_fee']+$vo['wallt']['notTotal']}</td>
                                             <td>{$vo['basic_oder']|count}</td>
                                             <td>{$vo.0}</td>
                                             <td>{$vo.Upower}</td>
                                             <td>2017/10/09</td>
                                             <td>
                                                 <a href="{:url('admin/index/user_info',array('id'=>$vo.uId))}" class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></a>
-                                                <a class="btn btn-success setRechargeClick" aria-hidden="true" title="充值" data-toggle="modal" data-target="#recharge" ><i class="glyphicon glyphicon-usd"></i></a>
+                                                <a class="btn btn-success rechargeClick" aria-hidden="true" title="充值" data-toggle="modal" data-target="#recharge" ><i class="glyphicon glyphicon-usd"></i></a>
                                                 <a class="btn btn-danger setRoleClick" aria-hidden="true"  title="设置角色" data-toggle="modal" data-target="#setRole" ><i class="glyphicon glyphicon-star"></i></a>
                                             </td>
                                             <td>兼职</td>
@@ -228,6 +228,42 @@
                     });
                 });
             }
+//............. 充值
+            model($(".rechargeClick"),$('#recharge'));
+            $(".saveRecharge").on('click',function(){
+                var uid = $(this).attr("data-uid");
+                var money = Number($('#recharge input[name="recharge_money"]').val());
+                $('#recharge input[name="recharge_money"]').val('');
+                var tr = "[data-uid='"+uid+"']";
+                $.ajax({   
+                    type:'post',
+                    data:{uId:uid,money:money},
+                    url:'../../api/Ajaxadmin/Rechargemoney',
+                    success:function(data){
+                        var data = eval(data);  
+                        if(data.state === '1111'){
+                            swal({
+                                title: "充值成功！",
+                                type: "success"
+                            });
+                            $(tr).find("td.balance").text(Number($(tr).find("td.balance").text())+money);
+                        }else if(data.state === '0000'){
+                            swal({
+                                title: "充值失败！",
+                                type: "error"
+                            });
+                        }
+                    },
+                    error:function(){
+                        swal({
+                            title: "网络出现问题！",
+                            type: "error"
+                        });
+                    }
+                });
+            });
+//............. end充值
+
 //............. 设置角色
             model($(".setRoleClick"),$('#setRole'));
             $(".saveRole").on('click',function(){
@@ -241,7 +277,6 @@
                     data:{uId:uid,role:type},
                     url:'../../api/Ajaxadmin/Setrole',
                     success:function(data){
-                        console.log(data);
                         if(data === '1111'){
                             swal({
                                 title: "角色设置成功！",
