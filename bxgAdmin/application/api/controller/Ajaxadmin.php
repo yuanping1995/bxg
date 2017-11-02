@@ -151,7 +151,7 @@ class Ajaxadmin extends \think\Controller
      */
     public function Setenable()
     {
-        if (request()->isGet()) {
+        if (0) {
             return json("非法访问！");
         } else {
             $U['uId'] = input('uId');
@@ -162,6 +162,7 @@ class Ajaxadmin extends \think\Controller
             $logtb = new log();
             Db::startTrans();//开启事物
             try{
+
                 if (is_null1($U) == '0000') {
                     $msg = "缺少必要参数";
                     $state = '0001';
@@ -170,7 +171,9 @@ class Ajaxadmin extends \think\Controller
                     $infores = info::where($uId)->update($U);
                     $aa = cookie('adminuid');
                     $logrest = $logtb->addlog($aa,'用户状态设置',$time);//增加管理员日志
+                   
                 }
+               
                 if($infores &&  $logrest){
                     Db::commit();// 提交事务
                     $state = '1111';
