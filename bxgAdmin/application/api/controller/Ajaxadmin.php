@@ -127,7 +127,7 @@ class Ajaxadmin extends \think\Controller
             $U['Fundtype'] = '3';
             $U['Reckontime'] = time();
             $Water = $Watertb->insert($U);//增加用户流水
-            $logrest = $logtb->addlog($U['uId'],'系统后台充值',$time);//增加管理员日志
+            $logrest = $logtb->addlog(cookie('adminuid'),'系统后台充值',$time);//增加管理员日志
             if($Water &&  $wallt && $asset && $logrest){
                 Db::commit();// 提交事务
                 $state = '1111';
@@ -167,7 +167,7 @@ class Ajaxadmin extends \think\Controller
                 } else {
                     $uId['uId'] = $U['uId'];
                     $infores = info::where($uId)->update($U);
-                    $aa = session('adminuid');
+                    $aa = cookie('adminuid');
                     $logrest = $logtb->addlog($aa,'用户状态设置',$time);//增加管理员日志
                 }
                 if($infores &&  $logrest){
