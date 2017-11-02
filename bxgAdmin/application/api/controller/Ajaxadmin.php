@@ -11,6 +11,9 @@ namespace app\api\controller;
 
 use app\admin\model\Asset;
 use app\admin\model\info;
+use app\admin\model\log;
+use app\admin\model\Wallt;
+use app\admin\model\Water;
 use think\Db;
 class Ajaxadmin extends \think\Controller
 {
@@ -65,19 +68,17 @@ class Ajaxadmin extends \think\Controller
         } else {
 
                 $info = new info();
-                $asset = new Asset();
+//                $asset = new Asset();
                 $rest = $info->where($uId)->update(['Upower' => $Member['Upower']]);
                 $inforaa = info::with('asset')->where($uId)->find()->toArray();
                 $inforaa['asset']['Salesprice'] += $money;
                 $asd = $inforaa['asset']['Salesprice'];
-                $rest1 = $asset->where($uId)->update(['Salesprice' => $asd]);
-                if ($rest && $rest1) {
+//                $rest1 = $asset->where($uId)->update(['Salesprice' => $asd]);
+                if ($rest) {
                     $arr1 = '1111';
                 }else{
-                    $arr1 = '00001';
+                    $arr1 = '0001';
                 }
-
-
         }
         return json($arr1);
     }
@@ -97,5 +98,37 @@ class Ajaxadmin extends \think\Controller
             }
         }
         return json($arr);
+    }
+    public function Rechargemoney(){
+        $U['uId'] = input('uId');
+        $U['Total_fee'] = input('money');
+        $state = '0000';
+        $msg = "充值失败！";
+        $time = time();
+        Db::startTrans();//开启事物
+        try{
+            $Watertb = new Water();
+            $logtb = new log();
+            $wallt = DB::execute('update user_wallt set notTotal=notTotal+'.$U['Total_fee'] .' where uId='.$U['uId']);//修改用户钱包
+            $asset = DB::execute('update user_asset   set Recharprice=Recharprice+'.$U['Total_fee']  .' where uId='.$U['uId']);//修改用户资产
+            $U['Fundsource'] = "充值";
+            $U['Fundtype'] = '3';
+            $U['Reckontime'] = time();
+            $Water = $Watertb->insert($U);//增加用户流水
+            $logrest = $logtb->addlog($U['uId'],'系统后台充值',$time);//增加管理员日志
+            if($Water &&  $wallt && $asset && $logrest){
+                Db::commit();// 提交事务
+                $state = '1111';
+                $msg = "充值成功！";
+            }
+        } catch (\Exception $e) {
+            Db::rollback();    // 回滚事务
+        }
+        $return = array(//返回状态
+            'state'=>$state,
+            'msg'=>$msg,
+            'time'=>date("Y-m-d H:m:s",$time)
+        );
+        return json($return);
     }
 }
