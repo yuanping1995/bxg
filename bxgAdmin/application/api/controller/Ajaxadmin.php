@@ -105,6 +105,10 @@ class Ajaxadmin extends \think\Controller
         $state = '0000';
         $msg = "充值失败！";
         $time = time();
+        dump(is_null1($U));
+        if(is_null1($U)=='0000'){
+            $msg = '必要参数为空！';
+        }else{
         Db::startTrans();//开启事物
         try{
             $Watertb = new Water();
@@ -124,11 +128,13 @@ class Ajaxadmin extends \think\Controller
         } catch (\Exception $e) {
             Db::rollback();    // 回滚事务
         }
+        }
         $return = array(//返回状态
             'state'=>$state,
             'msg'=>$msg,
             'time'=>date("Y-m-d H:m:s",$time)
         );
+
         return json($return);
     }
 }
