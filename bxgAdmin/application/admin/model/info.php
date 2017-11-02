@@ -44,6 +44,10 @@ class info extends Model
          $asset = $this->hasOne('Asset','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
          return $asset;
      }
+     public function staff(){
+         $Staff = $this->hasOne('Staff','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+         return $Staff;
+     }
 
 
 }

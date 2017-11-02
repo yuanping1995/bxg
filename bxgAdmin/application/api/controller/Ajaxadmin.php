@@ -15,6 +15,7 @@ use app\admin\model\log;
 use app\admin\model\Wallt;
 use app\admin\model\Water;
 use think\Db;
+use think\Request;
 class Ajaxadmin extends \think\Controller
 {
     /**
@@ -82,6 +83,10 @@ class Ajaxadmin extends \think\Controller
         }
         return json($arr1);
     }
+
+    /**设置角色
+     * @return \think\response\Json
+     */
     public function Setrole(){
         $U['uId'] = input('uId');
         $U['Role'] = input('role');
@@ -99,6 +104,10 @@ class Ajaxadmin extends \think\Controller
         }
         return json($arr);
     }
+
+    /**会员充值
+     * @return \think\response\Json
+     */
     public function Rechargemoney(){
         $U['uId'] = input('uId');
         $U['Total_fee'] = input('money');
@@ -134,7 +143,80 @@ class Ajaxadmin extends \think\Controller
             'msg'=>$msg,
             'time'=>date("Y-m-d H:m:s",$time)
         );
-
         return json($return);
     }
+
+    /**设置认证状态
+     * @return \think\response\Json
+     */
+    public function Setenable()
+    {
+        if (request()->isGet()) {
+            return json("非法访问！");
+        } else {
+            $U['uId'] = input('uId');
+            $U['Enable'] = input('enable');
+            $time = time();
+            $state = '0000';
+            $msg = "设置失败！";
+            $logtb = new log();
+            Db::startTrans();//开启事物
+            try{
+                if (is_null1($U) == '0000') {
+                    $msg = "缺少必要参数";
+                    $state = '0001';
+                } else {
+                    $uId['uId'] = $U['uId'];
+                    $infores = info::where($uId)->update($U);
+                    $aa = session('adminuid');
+                    $logrest = $logtb->addlog($aa,'用户状态设置',$time);//增加管理员日志
+                }
+                if($infores &&  $logrest){
+                    Db::commit();// 提交事务
+                    $state = '1111';
+                    $msg = "设置成功！";
+                }
+            } catch (\Exception $e) {
+                Db::rollback();    // 回滚事务
+            }
+            $return = array(
+                'state' => $state,
+                'msg' => $msg,
+                'time'=>$time
+            );
+            return json($return);
+        }
+    }
+    public function Login(){
+        if (request()->isPost()) {
+            return json("非法访问！");
+        } else {
+            $U['Mobilenumber'] = input('Mobilenumber');
+            $U['uPass'] = md5(input('pass'));
+            $info = info::with("Staff")->where($U)->find();
+            $time = time();
+            if($info){
+                $info = $info->toArray();
+            }else{
+                $state = '0001';
+                $msg = "密码错误or账号错误";
+            }
+            if($info['staff']['Staffrole']==8){
+                cookie('adminuid', $info['uId']);
+                cookie('Staffrole', $info['staff']['Staffrole']);
+                $state = '1111';
+                $msg = "登录成功！";
+            }else{
+                $state = '0000';
+                $msg = "对不起你不能登录管理系统";
+            }
+            $return = array(
+                'state'=>$state,
+                'msg'=>$msg,
+                'time'=>date("Y-m-d H:m:s",$time)
+            );
+          return json($return);
+        }
+    }
+
 }
