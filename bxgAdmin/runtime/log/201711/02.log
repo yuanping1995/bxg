@@ -1,0 +1,415 @@
+---------------------------------------------------------------
+[ 2017-11-02T14:42:47+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin
+[ info ] 127.0.0.2/index.php/admin [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：1,381.55kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-02T14:42:48+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/count/index.html
+[ info ] 127.0.0.2/index.php/admin/count/index.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：1,375.78kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'count',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Count->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Count.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\count\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-02T14:42:50+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/index/user_list.html
+[ info ] 127.0.0.2/index.php/admin/index/user_list.html [运行时间：0.176010s][吞吐率：5.68req/s] [内存消耗：2,460.71kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->user_list[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_list.html [ array (
+  0 => 'arr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=bxgogo;host=192.168.1.6;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.037002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_info` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_info` LIMIT 0,3 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_wallt` [ RunTime:0.031002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_wallt` WHERE  `uId` IN (20144230042,123) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_basic_order` [ RunTime:0.032002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_basic_order` WHERE  `uId` IN (20144230042,123) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-11-02T14:42:57+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Setrole
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Setrole [运行时间：0.118007s][吞吐率：8.47req/s] [内存消耗：1,940.84kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Setrole',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/index/user_list.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '22',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'uId' => '20144230042',
+  'role' => '4',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Setrole[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=bxgogo;host=192.168.1.6;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.044002s ]
+[ sql ] [ SQL ] UPDATE `user_info`  SET `Role`=4  WHERE  `uId` = 20144230042 [ RunTime:0.025002s ]
+---------------------------------------------------------------
+[ 2017-11-02T14:43:00+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/index/user_info/id/20144230042.html
+[ info ] 127.0.0.2/index.php/admin/index/user_info/id/20144230042.html [运行时间：0.319018s][吞吐率：3.13req/s] [内存消耗：2,686.37kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'user_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/index/user_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'id' => '20144230042',
+)
+[ info ] [ RUN ] app\admin\controller\Index->user_info[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html [ array (
+  0 => 'arr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=bxgogo;host=192.168.1.6;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.033002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_info` WHERE  `uId` = 20144230042 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_honor` [ RunTime:0.029002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_honor` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_follow` [ RunTime:0.032002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_follow` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_collection` [ RunTime:0.030002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_collection` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_agreement` [ RunTime:0.033002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_agreement` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_resume` [ RunTime:0.032002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_resume` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_recommend` [ RunTime:0.032002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_recommend` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_recommend` WHERE  `uId` = 20144230042 LIMIT 1 [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `uId`,`id`,`nickName` FROM `user_info` WHERE  `uId` = 123 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-11-02T14:43:05+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Memberupgrade
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Memberupgrade [运行时间：0.136008s][吞吐率：7.35req/s] [内存消耗：2,043.75kb] [文件加载：56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Memberupgrade',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/index/user_info/id/20144230042.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '33',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'uId' => '20144230042',
+  'Member' => '3',
+  'money' => '30',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Memberupgrade[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=bxgogo;host=192.168.1.6;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.036002s ]
+[ sql ] [ SQL ] UPDATE `user_info`  SET `Upower`=3  WHERE  `uId` = 20144230042 [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_info` WHERE  `uId` = 20144230042 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_asset` [ RunTime:0.030002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_asset` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-11-02T14:43:15+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Setrole
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Setrole [运行时间：0.119007s][吞吐率：8.40req/s] [内存消耗：1,940.96kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Setrole',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/index/user_info/id/20144230042.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '22',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'uId' => '20144230042',
+  'role' => '2',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Setrole[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=bxgogo;host=192.168.1.6;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.038002s ]
+[ sql ] [ SQL ] UPDATE `user_info`  SET `Role`=2  WHERE  `uId` = 20144230042 [ RunTime:0.032002s ]
+---------------------------------------------------------------
+[ 2017-11-02T14:44:25+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin
+[ info ] 127.0.0.2/index.php/admin [运行时间：0.032002s][吞吐率：31.25req/s] [内存消耗：1,232.97kb] [文件加载：49]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-02T14:44:25+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/count/index.html
+[ info ] 127.0.0.2/index.php/admin/count/index.html [运行时间：0.035002s][吞吐率：28.57req/s] [内存消耗：1,195.06kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'count',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Count->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Count.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\count\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-02T14:45:41+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/index/user_list.html
+[ info ] 127.0.0.2/index.php/admin/index/user_list.html [运行时间：0.185011s][吞吐率：5.41req/s] [内存消耗：2,315.88kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->user_list[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_list.html [ array (
+  0 => 'arr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=bxgogo;host=192.168.1.6;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.036002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_info` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_info` LIMIT 0,3 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_wallt` [ RunTime:0.040002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_wallt` WHERE  `uId` IN (20144230042,123) [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_basic_order` [ RunTime:0.040002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_basic_order` WHERE  `uId` IN (20144230042,123) [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-11-02T14:45:44+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/index/user_info/id/20144230042.html
+[ info ] 127.0.0.2/index.php/admin/index/user_info/id/20144230042.html [运行时间：0.327018s][吞吐率：3.06req/s] [内存消耗：2,402.55kb] [文件加载：66]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'user_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/index/user_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'id' => '20144230042',
+)
+[ info ] [ RUN ] app\admin\controller\Index->user_info[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html [ array (
+  0 => 'arr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=bxgogo;host=192.168.1.6;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `user_info` WHERE  `uId` = 20144230042 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_honor` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_honor` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_follow` [ RunTime:0.038002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_follow` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_collection` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_collection` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_agreement` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_agreement` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_resume` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_resume` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_recommend` [ RunTime:0.036002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_recommend` WHERE  `uId` = 20144230042 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `user_recommend` WHERE  `uId` = 20144230042 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `uId`,`id`,`nickName` FROM `user_info` WHERE  `uId` = 123 [ RunTime:0.001000s ]
