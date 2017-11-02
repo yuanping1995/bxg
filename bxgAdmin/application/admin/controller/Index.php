@@ -13,7 +13,7 @@ class Index extends \think\Controller
         if(empty(cookie('adminuid'))){
             header("Location:admin/login/index");
         }else{
-          
+//            dump(cookie('adminuid'));
         }
 
     }
@@ -47,6 +47,7 @@ class Index extends \think\Controller
               $num[$key]= arraySum($val['basic_oder'], 'Total_fee',$arr);
               Array_unshift($list[$key], $num[$key]);
         }
+//        dump($list);
         $this->assign('arr',$list);
     	return $this->fetch();
     }
@@ -62,7 +63,6 @@ class Index extends \think\Controller
         }
         $list['recommend']['CoverId'] = $recommendinfo['info'];
         $list['Upower'] =  Membership($list['Upower']);
-
         $list['Role'] = Role($list['Role']);
         $list['AuthStatus'] = AuthStatus($list['AuthStatus']);
         $list['Enable'] = Enable($list['Enable']);

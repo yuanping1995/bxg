@@ -10,6 +10,7 @@ namespace app\api\controller;
 
 
 use app\admin\model\Asset;
+use app\admin\model\Honor_detail;
 use app\admin\model\info;
 use app\admin\model\log;
 use app\admin\model\Wallt;
@@ -186,8 +187,12 @@ class Ajaxadmin extends \think\Controller
             return json($return);
         }
     }
+
+    /**后台登录
+     * @return \think\response\Json
+     */
     public function Login(){
-        if (request()->isPost()) {
+        if (request()->isGet()) {
             return json("非法访问！");
         } else {
             $U['Mobilenumber'] = input('Mobilenumber');
@@ -224,6 +229,49 @@ class Ajaxadmin extends \think\Controller
                 'cookie'=>$cookie
             );
           return json($return);
+        }
+    }
+
+    /**
+     * @return \think\response\Json
+     */
+    public function Creditupgrade(){
+        if (request()->isGet()) {
+            return json("非法访问！");
+        }else{
+            $U['uId'] = input("uId");
+            $U['Honorval'] = input('Credit');
+            $U['Honorsource'] = input('content');
+            $time = time();
+            if(is_null1($U)=='0000'){
+                $state = '0000';
+                $msg = '必要参数不完整';
+            }else {
+                $logtb = new log();
+                Db::startTrans();//开启事物
+                try {
+                    $wallt = DB::execute('update user_honor set Honorval=Honorval+' . $U['Honorval'] . ' where uId=' . $U['uId']);//修改用户钱包
+                    $honordetail = Honor_detail::where('uId',$U['uId'])->insert($U);
+                  $aa = cookie('adminuid');
+                    $logrest = $logtb->addlog($aa,'用户增加信用',$time);//增加管理员日志
+                    if ($wallt && $honordetail && $logrest) {
+                        Db::commit();// 提交事务
+                        $state = '1111';
+                        $msg = "设置成功！";
+                    }else{
+                        $state = '0001';
+                        $msg = "设置失败！";
+                    }
+                } catch (\Exception $e) {
+                    Db::rollback();    // 回滚事务
+                }
+            }
+            $return = array(
+                'state'=>$state,
+                'msg'=>$msg,
+                'time'=>date("Y-m-d H:m:s",$time)
+            );
+            return json($return);
         }
     }
 
