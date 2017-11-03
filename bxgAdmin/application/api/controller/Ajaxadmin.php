@@ -281,7 +281,7 @@ class Ajaxadmin extends \think\Controller
      * @return array|string
      */
     public function Deleteclose(){
-        if(empty(is_visit(1))) {//访问是get是执行
+        if(empty(is_visit(2))) {//访问是post是执行
             $U['id'] = array();
             $U['id'] = input('arr');//接受情亲密人id数组
             $U['uId'] = input('uId');
@@ -319,10 +319,8 @@ class Ajaxadmin extends \think\Controller
             return $retrn;
         }
         else{//非get时返回错误
-                return is_visit(1);
+                return is_visit(2);
             }
-
-
-
     }
+
 }
