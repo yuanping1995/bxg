@@ -11,5 +11,5 @@ namespace app\admin\model;
 use think\Model;
 class Resume extends Model
 {
-
+ protected $name= "Resume";
 }

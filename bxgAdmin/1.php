@@ -5,11 +5,25 @@ echo '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schem
 <xml><w:WordDocument><w:View>Print</w:View></xml>
 <script src="includes/js/ztree/js/jquery-1.4.4.min.js" type="text/javascript"></script>
 </head>';
-echo '<table class="table_dayin">
-<caption class="table_caption">';
-echo "数字化教学系统电子备课稿<br>
-<span>学科 <em style='border-bottom:1px solid #545454;'>语文</em>学校 <em style='border-bottom: 1px solid #545454;'>实验中学</em></span>
-</caption>";
+echo '<table class="table_dayin">';
+
+echo'   <table width=600 cellpadding="6" cellspacing="1" bgcolor="#336699"> 
+<tr bgcolor="White"> 
+  <td>PHP10086</td> 
+  <td><a href="http://www.jb51.net" target="_blank" >http://www.jb51.net</a></td> 
+</tr> 
+<tr bgcolor="red"> 
+  <td>PHP10086</td> 
+  <td><a href="http://www.jb51.net" target="_blank" >http://www.jb51.net</a></td> 
+</tr> 
+<tr bgcolor="White"> 
+  <td colspan=2 > 
+  PHP10086<br> 
+  最靠谱的PHP技术分享网站 
+  <img src="http://www.jb51.net/wp-content/themes/WPortal-Blue/images/logo.gif"> 
+  </td> 
+</tr> 
+</table>                                           ';
 echo '</table>';
 ob_start(); //打开缓冲区
 header("Cache-Control: public");
