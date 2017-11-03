@@ -10,6 +10,7 @@ namespace app\api\controller;
 
 
 use app\admin\model\Asset;
+use app\admin\model\Close;
 use app\admin\model\Honor_detail;
 use app\admin\model\info;
 use app\admin\model\log;
@@ -170,10 +171,8 @@ class Ajaxadmin extends \think\Controller
                     $uId['uId'] = $U['uId'];
                     $infores = info::where($uId)->update($U);
                     $aa = cookie('adminuid');
-                    $logrest = $logtb->addlog($aa,'用户状态设置',$time);//增加管理员日志
-                   
+                    $logrest = $logtb->addlog($aa,'用户'. $U['uId'].'状态设置为'.$U['Enable'],$time);//增加管理员日志
                 }
-               
                 if($infores &&  $logrest){
                     Db::commit();// 提交事务
                     $state = '1111';
@@ -235,7 +234,7 @@ class Ajaxadmin extends \think\Controller
         }
     }
 
-    /**
+    /**信用修改接口
      * @return \think\response\Json
      */
     public function Creditupgrade(){
@@ -255,8 +254,8 @@ class Ajaxadmin extends \think\Controller
                 try {
                     $wallt = DB::execute('update user_honor set Honorval=Honorval+' . $U['Honorval'] . ' where uId=' . $U['uId']);//修改用户钱包
                     $honordetail = Honor_detail::where('uId',$U['uId'])->insert($U);
-                  $aa = cookie('adminuid');
-                    $logrest = $logtb->addlog($aa,'用户增加信用',$time);//增加管理员日志
+                    $aa = cookie('adminuid');
+                    $logrest = $logtb->addlog($aa,'给'.$U['uId'].'用户增加信用'.$U['Honorval'],$time);//增加管理员日志
                     if ($wallt && $honordetail && $logrest) {
                         Db::commit();// 提交事务
                         $state = '1111';
@@ -278,4 +277,52 @@ class Ajaxadmin extends \think\Controller
         }
     }
 
+    /**删除亲密人
+     * @return array|string
+     */
+    public function Deleteclose(){
+        if(empty(is_visit(1))) {//访问是get是执行
+            $U['id'] = array();
+            $U['id'] = input('arr');//接受情亲密人id数组
+            $U['uId'] = input('uId');
+            $time = time();
+            if (is_null1($U) == '0000') {
+                $state = '0000';
+                $msg = '必要参数不完整';
+            } else {
+                $logtb = new log();
+                DB::startTrans();
+                try {
+                    $uId['uId'] = $U['uId'];
+                    $deletclose = Close::destroy($U['id']);
+                    $aa = cookie('adminuid');
+                    $logrest = $logtb->addlog($aa,'删除'.$U['uId'].'的亲密人id有'.json_encode($U['id'])."",$time);//增加管理员日志
+                    if($deletclose && $logrest){
+                        Db::commit();// 提交事务
+                        $state = '1111';
+                        $msg = "设置成功！";
+                    }else{
+                        $state = '0001';
+                        $msg = "设置失败！";
+                    }
+                }catch (\Exception $e) {
+                    Db::rollback();    // 回滚事务
+                    $state = '0002';
+                    $msg = "数据库操作失败";
+                }
+            }
+            $retrn = array(
+                'state'=>$state,
+                'msg'=>$msg,
+                'time'=>date("Y-m-d H:m:s",$time)
+            );
+            return $retrn;
+        }
+        else{//非get时返回错误
+                return is_visit(1);
+            }
+
+
+
+    }
 }

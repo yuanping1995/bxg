@@ -385,7 +385,7 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">活跃度</label>
                                             <div class="col-sm-9">
-                                                100
+                                                {$arr['honor']['SignNum']}
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -445,132 +445,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        {foreach name="arr['close']" id="vo"}
                                             <tr>
                                                 <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
+                                                <td>{$vo.uId}</td>
+                                                <td>{$vo.Closeid}</td>
+                                                <td>{if condition="($vo.Closetype == 1)  "} 家人
+                                                    {else /}好友
+                                                    {/if}</td>
+                                                <td>{$vo.Intimacy}</td>
+                                                <td>  {$vo.Intime|date="Y/m/d",###}</td>
+                                                <td><span class="label label-primary">
+                                                    {if condition="($vo.Status == 1)  "}已核实{else /}未核实
+                                                    {/if}</span></td>
                                             </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-warning">未核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr> <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                             <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>1234</td>
-                                                <td>1235</td>
-                                                <td>家人</td>
-                                                <td>10</td>
-                                                <td>2017/10/10</td>
-                                                <td><span class="label label-primary">已核实</span></td>
-                                            </tr>
+                                        {/foreach}
                                         </tbody>
                                     </table>
                                 </div>

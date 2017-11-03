@@ -175,7 +175,7 @@ function shopStatus($arr){
     return $arr;
 }
 
-/**
+/**判断是否为空
  * @param $arr
  * @return string
  */
@@ -190,6 +190,29 @@ function is_null1($arr){
         }
     }
     return $arr;
+}
+
+/** 判断访问方式
+ * @param $arr 1为get 2为post 默认为1
+ *@return string
+ */
+function is_visit($arr){
+    $msg = '非法访问';
+    switch ($arr){
+        case 1:
+            if(request()->isPost()){
+               return $msg;
+            }
+            break;
+        case 2:
+             if(request()->isGet()){
+                 return  $msg;
+             }
+             break;
+        default:
+            return  "函数参数错误！";
+
+    }
 }
 
 
