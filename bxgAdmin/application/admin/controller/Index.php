@@ -85,7 +85,6 @@ class Index extends \think\Controller
                             echo'<table width="587">
     <colgroup>
         <col width="125"/>
-      
         <col width="126"/>
         <col width="172"/>
         <col width="72"/>
