@@ -48,6 +48,11 @@ class info extends Model
          $Staff = $this->hasOne('Staff','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
          return $Staff;
      }
+    public function close(){
+        $Close = $this->hasMany('Close','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+        return $Close;
+    }
+
 
 
 }

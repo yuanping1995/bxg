@@ -25,12 +25,13 @@ class Index extends \think\Controller
     }
 
 
+
 // 用户管理
 
     // 用户列表
     public function user_list()
     {
-        $list = info::with("Wallt,basic_Oder")->paginate(3)->toArray();
+        $list = info::with("Wallt,basic_Oder")->paginate()->toArray();
         $list = $list['data'];
         $arr = array(2,3,4,5,);
         $i = 0;
@@ -54,7 +55,7 @@ class Index extends \think\Controller
     //用户信息
     public function user_info(){
         $uId['uId']  = input("id");
-        $list = info::with("honor,follow,Collection,agreement,resume,recommend")->where($uId)->find()->toArray();
+        $list = info::with("honor,follow,Collection,agreement,resume,recommend,close")->where($uId)->find()->toArray();
         $recommendcId['uId'] = $list['recommend']['uId'];
         $recommendinfo = Recommend::with("info")->where($recommendcId)->find();
         if(!empty($recommendinfo)){
