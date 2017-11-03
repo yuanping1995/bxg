@@ -8,8 +8,16 @@ class Order extends \think\Controller
 
 // 订单管理
 
-    // 订单列表
-    public function order_list(){
+    // 普通订单列表
+    public function common_order(){
+        return $this->fetch();
+    }
+    // 预定订单列表
+    public function reserve_order(){
+        return $this->fetch();
+    }
+    // 附属订单列表
+    public function belong_order(){
         return $this->fetch();
     }
     // 订单信息
