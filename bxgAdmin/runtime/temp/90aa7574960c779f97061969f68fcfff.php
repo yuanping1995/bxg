@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509613162;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509679115;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -247,19 +247,19 @@
                                                 <div class="form-group draggable">
                                                     <label class="col-sm-3 control-label">提升值：</label>
                                                     <div class="col-sm-9">
-                                                        <input type="number" name="" placeholder ="请输入提升值" style="margin-top:-5px;padding:5px;">
+                                                        <input type="number" name="credit" placeholder ="请输入提升值" style="margin-top:-5px;padding:5px;">
                                                     </div>
                                                 </div>
                                                 <div class="form-group draggable">
                                                     <label class="col-sm-3 control-label">理由：</label>
                                                     <div class="col-sm-9">
-                                                        <textarea cols="35" rows="5" style="resize:none;"></textarea>
+                                                        <textarea cols="35" name="credit_content" rows="5" style="resize:none;"></textarea>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">保存</button>
+                                            <button type="button" class="btn btn-primary saveCredit" data-dismiss="modal">保存</button>
                                         </div>
                                         
                                     </div>
@@ -366,7 +366,9 @@
                                             <label class="col-sm-3 control-label">店铺状态</label>
                                             <div class="col-sm-9">
                                                 <span class="account" style="display:inline-block;padding-right:10px;"><?php echo $arr['shopStatus']; ?></span>
-                                                <a href="/" title="" class="btn btn-primary btn-xs">查看</a>
+                                                <?php if($arr['shopStatus'] == '未开通'): else: ?>
+                                                    <a href="/" title="" class="btn btn-primary btn-xs">查看</a>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -413,7 +415,7 @@
                                         <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">所签订协议</label>
                                             <div class="col-sm-8">
-                                                <span style="display:inline-block;padding-right:10px;">5份</span>
+                                                <span style="display:inline-block;padding-right:10px;"><?php echo count($arr['agreement']); ?>份</span>
                                                 <button type="button" class="btn btn-primary btn-xs">查看</button>
                                             </div>
                                         </div>
@@ -1283,10 +1285,10 @@
                     url:'../../../../api/Ajaxadmin/Setenable',
                     success:function(data){
                         if(num === 1){
-                            _this.removeClass('btn-danger').addClass('btn-primary').html("正常");
+                            _this.removeClass('btn-danger').addClass('btn-primary').attr('data-account',2).html("正常");
                             $(".account").html("锁定");
                         }else{
-                            _this.removeClass('btn-primary').addClass('btn-danger').html("锁定");
+                            _this.removeClass('btn-primary').addClass('btn-danger').attr('data-account',1).html("锁定");
                             $(".account").html("正常");
                         }
                     },
@@ -1300,7 +1302,54 @@
                 });
             });
 //............. end 账户状态
+//............. 信用值
+            $(".saveCredit").on('click',function(){
+                var uid = $('.imgUp').attr("data-uid");
+                var credit = $(this).parent().parent().find("input[name='credit']").val();
+                var content = $(this).parent().parent().find("textarea").val();
+                console.log(uid+'---'+credit+'---'+content);
+                if(credit == ''){
+                    swal({
+                        title: "请输入要提升的信用值",
+                        type: "error"
+                    });
+                }else if(content == ''){
+                    swal({
+                        title: "请输入提升的原因",
+                        type: "error"
+                    });
+                }else{
+                    $.ajax({
+                        type:'post',
+                        data:{uId:uid,Credit:credit,content:content},
+                        url:'../../../../api/Ajaxadmin/Creditupgrade',
+                        success:function(data){
+                            var data = eval(data);
+                            if(data.state === '1111'){
+                                swal({
+                                    title: data.msg,
+                                    type: "success"
+                                });
+                                $(".credit").text(Number($(".credit").text())+Number(credit));
+                            }else if(data.state === '0000'){
+                                swal({
+                                    title: data.msg,
+                                    type: "error"
+                                });
+                            }
+                        },
+                        error:function(data){
+                            swal({
+                                title: "网络出现问题！",
+                                type: "error"
+                            });
+                        }
+                    })
+                }
 
+                
+            });
+//............. end 信用值
             // 图片上传
             $(".upAvactor").on('click',function(){
                 $('.imgUp').click();
