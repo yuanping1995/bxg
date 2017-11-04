@@ -1,0 +1,612 @@
+---------------------------------------------------------------
+[ 2017-11-03T17:19:32+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/index/user_info/id/20144230042.html
+[ info ] 127.0.0.2/index.php/admin/index/user_info/id/20144230042.html [è¿è¡Œæ—¶é—´ï¼š0.368021s][åžåçŽ‡ï¼š2.72req/s] [å†…å­˜æ¶ˆè€—ï¼š2,747.47kb] [æ–‡ä»¶åŠ è½½ï¼š70]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'user_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; b_adminuid=20144230042; b_Staffrole=8; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/index/user_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'id' => '20144230042',
+)
+[ info ] [ RUN ] app\admin\controller\Index->user_info[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html [ array (
+  0 => 'arr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=bxgogo;host=192.168.1.31;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.034002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_info` WHERE  `uId` = 20144230042 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_honor` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_honor` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_follow` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `user_follow` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_collection` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_collection` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_agreement` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_agreement` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_resume` [ RunTime:0.028001s ]
+[ sql ] [ SQL ] SELECT * FROM `user_resume` WHERE  `uId` = 20144230042 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_recommend` [ RunTime:0.028001s ]
+[ sql ] [ SQL ] SELECT * FROM `user_recommend` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_close` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT * FROM `user_close` WHERE  `uId` = 20144230042 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_recommend` WHERE  `uId` = 20144230042 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `uId`,`id`,`nickName` FROM `user_info` WHERE  `uId` = 123 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-11-03T17:28:51+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin
+[ info ] 127.0.0.2/index.php/admin [è¿è¡Œæ—¶é—´ï¼š0.063003s][åžåçŽ‡ï¼š15.87req/s] [å†…å­˜æ¶ˆè€—ï¼š1,412.42kb] [æ–‡ä»¶åŠ è½½ï¼š52]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-03T17:28:51+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/login/index
+[ info ] 127.0.0.2/index.php/admin/login/index [è¿è¡Œæ—¶é—´ï¼š0.033002s][åžåçŽ‡ï¼š30.30req/s] [å†…å­˜æ¶ˆè€—ï¼š1,290.98kb] [æ–‡ä»¶åŠ è½½ï¼š50]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-03T17:28:58+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.050025s][åžåçŽ‡ï¼š0.95req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:01+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.062013s][åžåçŽ‡ï¼š0.94req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:06+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.064845s][åžåçŽ‡ï¼š0.94req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:11+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.055224s][åžåçŽ‡ï¼š0.95req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:12+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.070039s][åžåçŽ‡ï¼š0.93req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:13+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.057638s][åžåçŽ‡ï¼š0.95req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.31kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:13+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.095248s][åžåçŽ‡ï¼š0.91req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.31kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:13+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.054452s][åžåçŽ‡ï¼š0.95req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.31kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:15+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.093213s][åžåçŽ‡ï¼š0.91req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:15+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.064807s][åžåçŽ‡ï¼š0.94req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:15+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.055405s][åžåçŽ‡ï¼š0.95req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:15+08:00 ] 127.0.0.2 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.2/index.php/api/Ajaxadmin/Login [è¿è¡Œæ—¶é—´ï¼š1.059202s][åžåçŽ‡ï¼š0.94req/s] [å†…å­˜æ¶ˆè€—ï¼š2,022.35kb] [æ–‡ä»¶åŠ è½½ï¼š56]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.2/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.2',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\bxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-11-03T17:29:22+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/login/index
+[ info ] 127.0.0.2/index.php/admin/login/index [è¿è¡Œæ—¶é—´ï¼š0.027001s][åžåçŽ‡ï¼š37.04req/s] [å†…å­˜æ¶ˆè€—ï¼š1,171.33kb] [æ–‡ä»¶åŠ è½½ï¼š48]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-03T17:29:29+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/index/index.html
+[ info ] 127.0.0.2/index.php/admin/index/index.html [è¿è¡Œæ—¶é—´ï¼š0.029601s][åžåçŽ‡ï¼š33.78req/s] [å†…å­˜æ¶ˆè€—ï¼š1,263.38kb] [æ–‡ä»¶åŠ è½½ï¼š50]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\bxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-03T17:29:29+08:00 ] 127.0.0.2 127.0.0.1 GET /index.php/admin/index/admin/login/index
+[ info ] 127.0.0.2/index.php/admin/index/admin/login/index [è¿è¡Œæ—¶é—´ï¼š0.030002s][åžåçŽ‡ï¼š33.33req/s] [å†…å­˜æ¶ˆè€—ï¼š1,214.07kb] [æ–‡ä»¶åŠ è½½ï¼š51]
+[ info ] [ LANG ] D:\phpStudy\WWW\bxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'connection' => 'close',
+  'host' => '127.0.0.2',
+)
+[ info ] [ PARAM ] array (
+  'login' => 'index',
+)
+[ info ] [ LOG ] INIT File

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_info.html";i:1509779772;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,14 +11,14 @@
     <meta name="description" content="">
 
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/plugins/animate.css" rel="stylesheet">
-    <link href="{$Think.__APPROOT__}/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
         .float-e-margins .btn{
             margin:0;
@@ -103,7 +104,7 @@
     <div class="wrapper wrapper-content animated"> 
         <div class="ibox float-e-margins">
             <div class="ibox-content"> 
-                <a href="{:url('admin/index/user_list')}" class="btn btn-primary">返回上一级</a>
+                <a href="<?php echo url('admin/index/user_list'); ?>" class="btn btn-primary">返回上一级</a>
                 <div class="clients-list">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#tab-1">基本信息</a></li>
@@ -272,10 +273,10 @@
                                
                                 <div class="col-sm-3">
                                     <div class="showAvactor">
-                                        <img src="{$Think.__APPROOT__}{$arr['Icon']}">
+                                        <img src="<?php echo __APPROOT__; ?><?php echo $arr['Icon']; ?>">
                                         <br>
                                         <button type="button" class="btn btn-primary btn-sm upAvactor" style="margin:15px 0;">修改头像</button>
-                                        <input type="file" accept="image/*" name="file" class="hide imgUp" data-uid="{$arr.uId}">
+                                        <input type="file" accept="image/*" name="file" class="hide imgUp" data-uid="<?php echo $arr['uId']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
@@ -283,19 +284,19 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">用户ID</label>
                                             <div class="col-sm-9">
-                                                {$arr.uId}
+                                                <?php echo $arr['uId']; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-3 control-label">昵称</label>
                                             <div class="col-sm-8">
-                                                {$arr.nickName}
+                                                <?php echo $arr['nickName']; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">注册时间</label>
                                             <div class="col-sm-7">
-                                                {$arr['Regtime']|date="Y/m/d H:i:s",###}
+                                                <?php echo date("Y/m/d H:i:s",$arr['Regtime']); ?>
                                             </div>
                                         </div>    
                                     </div>
@@ -303,14 +304,14 @@
                                        <div class="col-sm-4">
                                             <label class="col-sm-4 control-label">会员等级</label>
                                             <div class="col-sm-8">
-                                                <span class="upower" style="display:inline-block;padding-right:10px;">{$arr['Upower']}</span>
+                                                <span class="upower" style="display:inline-block;padding-right:10px;"><?php echo $arr['Upower']; ?></span>
                                                 <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#upGrade">升级</button>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">用户角色</label>
                                             <div class="col-sm-8">
-                                                <span class="role" style="display:inline-block;padding-right:10px;">{$arr['Role']}</span>
+                                                <span class="role" style="display:inline-block;padding-right:10px;"><?php echo $arr['Role']; ?></span>
                                                  <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#setRole">设置</button>
                                             </div>
                                         </div>
@@ -320,19 +321,19 @@
                                        <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">认证状态</label>
                                             <div class="col-sm-9">
-                                                <span class="identify" style="display:inline-block;padding-right:10px;">{$arr['AuthStatus']}</span>
+                                                <span class="identify" style="display:inline-block;padding-right:10px;"><?php echo $arr['AuthStatus']; ?></span>
                                                 <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#identify">查看</button>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">账户状态</label>
                                             <div class="col-sm-8">
-                                                <span class="account" style="display:inline-block;padding-right:10px;">{$arr['Enable']}</span>
-                                                {if condition = "$arr['Enable'] eq '正常'"}
+                                                <span class="account" style="display:inline-block;padding-right:10px;"><?php echo $arr['Enable']; ?></span>
+                                                <?php if($arr['Enable'] == '正常'): ?>
                                                 <button type="button" class="btn btn-danger btn-xs account_state" data-account="1">锁定</button>
-                                                {else /}
+                                                <?php else: ?>
                                                 <button type="button" class="btn btn-primary btn-xs account_state" data-account="2">正常</button>
-                                                {/if}
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
@@ -346,14 +347,14 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">手机号</label>
                                             <div class="col-sm-9">
-                                                <span class="mobile" style="display:inline-block;padding-right:10px;">{$arr['Mobilenumber']}</span>
+                                                <span class="mobile" style="display:inline-block;padding-right:10px;"><?php echo $arr['Mobilenumber']; ?></span>
                                                 <button type="button" class="btn btn-warning btn-xs">更换</button>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">信用值</label>
                                             <div class="col-sm-8">
-                                                <span class="credit" style="display:inline-block;padding-right:10px;">{$arr['honor']['Honorval']}</span>
+                                                <span class="credit" style="display:inline-block;padding-right:10px;"><?php echo $arr['honor']['Honorval']; ?></span>
                                                 <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#credit">提升</button>
                                             </div>
                                         </div>
@@ -364,11 +365,10 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">店铺状态</label>
                                             <div class="col-sm-9">
-                                                <span class="store_status" style="display:inline-block;padding-right:10px;">{$arr['shopStatus']}</span>
-                                                {if condition = "$arr['shopStatus'] eq '未开通'"}
-                                                {else /}
+                                                <span class="store_status" style="display:inline-block;padding-right:10px;"><?php echo $arr['shopStatus']; ?></span>
+                                                <?php if($arr['shopStatus'] == '未开通'): else: ?>
                                                     <a href="/" title="" class="btn btn-primary btn-xs">查看</a>
-                                                {/if}
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -380,7 +380,7 @@
                                          <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">用户标签</label>
                                             <div class="col-sm-9">
-                                                {$arr['resume']['UserTag']}
+                                                <?php echo $arr['resume']['UserTag']; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -388,19 +388,19 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">活跃度</label>
                                             <div class="col-sm-9">
-                                                {$arr['honor']['SignNum']}
+                                                <?php echo $arr['honor']['SignNum']; ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="col-sm-4 control-label">收藏量</label>
                                             <div class="col-sm-8">
-                                                {$arr['collection']|count}
+                                                <?php echo count($arr['collection']); ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">关注量</label>
                                             <div class="col-sm-9">
-                                                {$arr['follow']|count}
+                                                <?php echo count($arr['follow']); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -408,14 +408,14 @@
                                         <div class="col-sm-4">
                                             <label class="col-sm-3 control-label">推荐人</label>
                                             <div class="col-sm-9">
-                                                <span style="display:inline-block;padding-right:10px;">{$arr['recommend']['CoverId']['nickName']}</span>
-                                                <a href="{:url('admin/index/user_info',array('id'=>$arr['recommend']['CoverId']['uId']))}" class="btn btn-warning btn-xs">查看</a>
+                                                <span style="display:inline-block;padding-right:10px;"><?php echo $arr['recommend']['CoverId']['nickName']; ?></span>
+                                                <a href="<?php echo url('admin/index/user_info',array('id'=>$arr['recommend']['CoverId']['uId'])); ?>" class="btn btn-warning btn-xs">查看</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <label class="col-sm-3 control-label">所签订协议</label>
                                             <div class="col-sm-8">
-                                                <span style="display:inline-block;padding-right:10px;">{$arr['agreement']|count}份</span>
+                                                <span style="display:inline-block;padding-right:10px;"><?php echo count($arr['agreement']); ?>份</span>
                                                 <button type="button" class="btn btn-primary btn-xs">查看</button>
                                             </div>
                                         </div>
@@ -444,21 +444,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {foreach name="arr['close']" id="vo"}
-                                            <tr data-uid="{$vo.uId}">
+                                        <?php if(is_array($arr['close']) || $arr['close'] instanceof \think\Collection || $arr['close'] instanceof \think\Paginator): if( count($arr['close'])==0 ) : echo "" ;else: foreach($arr['close'] as $key=>$vo): ?>
+                                            <tr data-uid="<?php echo $vo['uId']; ?>">
                                                 <td></td>
-                                                <td>{$vo.Id}</td>
-                                                <td>{$vo.Closeid}</td>
-                                                <td>{if condition="($vo.Closetype == 1)  "} 家人
-                                                    {else /}好友
-                                                    {/if}</td>
-                                                <td>{$vo.Intimacy}</td>
-                                                <td>  {$vo.Intime|date="Y/m/d",###}</td>
+                                                <td><?php echo $vo['Id']; ?></td>
+                                                <td><?php echo $vo['Closeid']; ?></td>
+                                                <td><?php if(($vo['Closetype'] == 1)): ?> 家人
+                                                    <?php else: ?>好友
+                                                    <?php endif; ?></td>
+                                                <td><?php echo $vo['Intimacy']; ?></td>
+                                                <td>  <?php echo date("Y/m/d",$vo['Intime']); ?></td>
                                                 <td><span class="label label-primary">
-                                                    {if condition="($vo.Status == 1)  "}已核实{else /}未核实
-                                                    {/if}</span></td>
+                                                    <?php if(($vo['Status'] == 1)): ?>已核实<?php else: ?>未核实
+                                                    <?php endif; ?></span></td>
                                             </tr>
-                                        {/foreach}
+                                        <?php endforeach; endif; else: echo "" ;endif; ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -951,7 +951,7 @@
                                                 <td>2000</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-warning">待付款</span></td>
-                                                <td><a href="{:url('admin/order/order_detail')}" class="label label-info">查看</a></td>
+                                                <td><a href="<?php echo url('admin/order/order_detail'); ?>" class="label label-info">查看</a></td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -961,7 +961,7 @@
                                                 <td>12345</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                                                <td><a href="{:url('admin/order/order_detail')}" class="label label-info">查看</a></td>
+                                                <td><a href="<?php echo url('admin/order/order_detail'); ?>" class="label label-info">查看</a></td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -971,7 +971,7 @@
                                                 <td>12345</td>
                                                 <td>2017/10/10 10:00</td>
                                                 <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                                                <td><a href="{:url('admin/order/order_detail')}" class="label label-info">查看</a></td>
+                                                <td><a href="<?php echo url('admin/order/order_detail'); ?>" class="label label-info">查看</a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1049,25 +1049,25 @@
     </div>
 
     <!-- 全局js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/jquery.min.js?v=2.1.4"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- Bootstrap table -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
      <!-- iCheck -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/iCheck/icheck.min.js"></script>
     <!-- Fancy box 图片放大-->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/fancybox/jquery.fancybox.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/fancybox/jquery.fancybox.js"></script>
     <!-- Sweet alert -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/sweetalert/sweetalert.min.js"></script>
 
      <!-- 以下自定义js -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/content.js?v=1.0.0"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/content.js?v=1.0.0"></script>
     <!-- Peity -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/demo/user-info.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/user-info.js"></script>
     <!-- 图片上传 -->
-    <script src="{$Think.__APPROOT__}/static/admin/js/demo/compress.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/compress.js"></script>
 
    
     <script>
