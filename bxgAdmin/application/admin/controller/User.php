@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 
+use app\admin\model\BasicOder;
 use app\admin\model\info;
 use app\admin\model\Recommend;
 use app\admin\model\Seller;
@@ -10,7 +11,9 @@ class User extends \think\Controller
     function _initialize()
     {
         $uId['uId']  = input("id");
-        $list = info::with("honor,follow,Collection,agreement,resume,recommend,close,health")->where($uId)->find()->toArray();
+        $list = info::with("honor,follow,Collection,agreement,resume,recommend,close,health,staff,Safe,Wish")->where($uId)->find();
+        if(!empty($list)){
+            $list = $list->toArray();
         $recommendcId['uId'] = $list['recommend']['uId'];
         $recommendinfo = Recommend::with("info")->where($recommendcId)->find();
         if(!empty($recommendinfo)){
@@ -32,8 +35,10 @@ class User extends \think\Controller
         $list['resume']['Mstatus'] = Mstatus($list['resume']['Mstatus']);
         $list['resume']['IdPhoto'] = object2array(json_decode($list['resume']['IdPhoto']));
         $list['shopStatus'] = shopStatus($list['shopStatus']);
-//        dump($list);
+//dump($list);
         $this->assign('arr',$list);
+        $this->assign('arr1',$list['safe']);
+        }
     }
 	public function tab_1(){
         return $this->fetch();
@@ -51,19 +56,23 @@ class User extends \think\Controller
 	public function tab_5(){
 	    $uId['shopid'] = 1;
 	    $Seller = Seller::where($uId)->find()->toArray();
-
 	    $Seller['Patentimg'] = object2array(json_decode($Seller['Patentimg']));
-  
 	    $this->assign("Seller",$Seller);
 		return $this->fetch();
 	}
 	public function tab_6(){
+
 		return $this->fetch();
 	}
 	public function tab_7(){
 		return $this->fetch();
 	}
 	public function tab_8(){
+	    $U['uId'] = input("id");
+//	    dump($U);
+	    $oder = BasicOder::where($U)->paginate()->toArray();
+//	    dump($oder);
+	    $this->assign("BasicOder",$oder['data']);
 		return $this->fetch();
 	}
 	public function tab_9(){

@@ -29,10 +29,9 @@ class Order extends \think\Controller
     }
 
     public function order_detail(){
-        $U['uId'] = input('uId');
+        $U['id'] = input('id');
         $oder = BasicOder::where($U)->find()->toArray();
         $oderdata1   = json_decode($oder['Goods'],true);
-        dump($oderdata1);exit;
         $Address   = json_decode($oder['Address'],true);
         $Delivery   = json_decode($oder['Delivery'],true);
             is_array($oderdata1)?null:$oderdata1 = array();

@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <th data-field="state" data-checkbox="true"></th>
-                    <th data-field="uid">用户ID</th>
+
                     <th data-field="wish_city">城市代码</th>
                     <th data-field="wish_title">心愿标题</th>
                     <th data-field="wish_content">心愿内容</th>
@@ -21,24 +21,20 @@
                 </tr>
             </thead>
             <tbody>
+            {foreach name="arr['wish']" id="vo"}
                 <tr>
                     <td></td>
-                    <td>1234</td>
-                    <td>bd4674842545</td>
-                    <td>oppo R11s</td>
-                    <td class="col-sm-4" style="padding-left:0px;">想要一个oppo R11s</td>
-                    <td>2017/10/10 10:00</td>
-                    <td><span class="label label-warning">未达成</span></td>
+                    <td>{$vo.City}</td>
+                    <td>{$vo.title}</td>
+                    <td class="col-sm-4" style="padding-left:0px;">{$vo.Content}</td>
+                    <td>{$vo.Wishtime|date="Y/m/d H:i:s",###}</td>
+                    <td><span class="label label-warning">{if condition = "$vo.Is_ok eq '2'"}
+                   已达成
+                        {else /}
+                      未达成
+                        {/if}</span></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td>1234</td>
-                    <td>bd4674842545</td>
-                    <td>oppo R11s</td>
-                    <td class="col-sm-4" style="padding-left:0px;">想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s想要一个oppo R11s</td>
-                    <td>2017/10/10 10:00</td>
-                    <td><span class="label label-primary">已达成</span>（2017-10-27 10:00）</td>
-                </tr>
+            {/foreach}
             </tbody>
         </table>
     </div>

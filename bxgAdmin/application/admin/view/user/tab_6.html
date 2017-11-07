@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <th data-field="state" data-checkbox="true"></th>
-                    <th data-field="uid">用户ID</th>
+
                     <th data-field="in_odd">保险单号</th>
                     <th data-field="in_total">保单金额</th>
                     <th data-field="in_payment">可赔付金额</th>
@@ -21,26 +21,22 @@
                 </tr>
             </thead>
             <tbody>
+
+            {foreach name="arr1" id="vo"}
                 <tr>
-                    <td></td>
-                    <td>1234</td>
-                    <td>bd4674842545</td>
-                    <td>200</td>
-                    <td>10000</td>
-                    <td>2017/10/10 10:00</td>
-                    <td><span class="label label-warning">未出险</span></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>1234</td>
-                    <td>bd4674842545</td>
-                    <td>200</td>
-                    <td>10000</td>
-                    <td>2017/10/10 10:00</td>
-                    <td><span class="label label-primary">已出险</span>  （2017-10-27 10:00）</td>
+
+                    <td>{$vo.odd}</td>
+                    <td>{$vo.price}</td>
+                    <td>{$vo.kprice}</td>
+                    <td> {$vo.inTime|date="Y/m/d H:i:s",###}</td>
+                    <td><span class="label label-primary" > {if condition = "$vo.isDanger eq '1'"}
+                      （2017-10-27 10:00）
+                        {else /}
+                      未出险
+                        {/if}</span>  </td>
 
                 </tr>
-                
+            {/foreach}
             </tbody>
         </table>
     </div>

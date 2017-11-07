@@ -60,6 +60,14 @@ class info extends Model
         $Seller = $this->hasOne('Seller','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
         return $Seller;
     }
+    public function Safe(){
+        $Safe = $this->hasMany('Safe','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+        return $Safe;
+    }
+    public function Wish(){
+        $Wish = $this->hasMany("Wish","uId",'uId');
+        return $Wish;
+    }
 
 
 }

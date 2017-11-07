@@ -22,36 +22,18 @@
                 </tr>
             </thead>
             <tbody>
+
+            {foreach name="BasicOder" id="vo"}
                 <tr>
                     <td></td>
-                    <td>1234</td>
-                    <td>bd4674842545</td>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.Mergeid}</td>
                     <td>普通</td>
-                    <td>2000</td>
-                    <td>2017/10/10 10:00</td>
-                    <td><span class="label label-warning">待付款</span></td>
-                    <td><a href="{:url('admin/order/order_detail')}" class="label label-info">查看</a></td>
+                    <td>{$vo.Total_fee}</td>
+                    <td>{$vo.Tradetime|date="Y/m/d H:i:s",###}</td>
+                    <td><a href="{:url('admin/order/order_detail',array('id'=>$vo.id))}" class="label label-info">查看</a></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td>1234</td>
-                    <td>bd4674842545</td>
-                    <td>代付人：XXX</td>
-                    <td>12345</td>
-                    <td>2017/10/10 10:00</td>
-                    <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                    <td><a href="{:url('admin/order/order_detail')}" class="label label-info">查看</a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>1234</td>
-                    <td>bd4674842545</td>
-                    <td>预约</td>
-                    <td>12345</td>
-                    <td>2017/10/10 10:00</td>
-                    <td><span class="label label-primary">交易完成</span>（2017-10-27 10:00）</td>
-                    <td><a href="{:url('admin/order/order_detail')}" class="label label-info">查看</a></td>
-                </tr>
+                {/foreach}
             </tbody>
         </table>
     </div>
