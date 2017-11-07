@@ -52,7 +52,14 @@ class info extends Model
         $Close = $this->hasMany('Close','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
         return $Close;
     }
-
+    public function Health(){
+        $Health = $this->hasMany('Health','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+        return $Health;
+    }
+    public function Seller(){
+        $Seller = $this->hasOne('Seller','uId','uId', ['info'=>'a', 'Wallt'=>'c'],'LEFT');
+        return $Seller;
+    }
 
 
 }

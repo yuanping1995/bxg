@@ -214,5 +214,47 @@ function is_visit($arr){
 
     }
 }
+/*
+ * 对象和数组之间的转换
+ *
+ */
+function object2array($object) {
+    if (is_object($object)) {
+        foreach ($object as $key => $value) {
+            $array[$key] = $value;
+        }
+    }
+    else {
+        $array = $object;
+    }
+    return $array;
+}
+
+/**订单配送信息
+ * @param $arr
+ * @return string
+ */
+function oderstate($arr){
+    switch ($arr){
+        case 1: $arr = "待付款";
+        break;
+        case 2: $arr = "待配送";
+        break;
+        case 3: $arr = "待收货";
+        break;
+        case 4:$arr = "待评论";
+        break;
+        case 5: $arr = "退货/返修";
+        break;
+        case 6: $arr = "交易完成";
+        break;
+        case  7: $arr = "交易取消";
+        break;
+        default:
+            $arr = "参数错误";
+    }
+    return $arr;
+}
+
 
 

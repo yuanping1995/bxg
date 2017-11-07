@@ -14,8 +14,11 @@ use app\admin\model\Close;
 use app\admin\model\Honor_detail;
 use app\admin\model\info;
 use app\admin\model\log;
+use app\admin\model\Safe;
+use app\admin\model\Staff;
 use app\admin\model\Wallt;
 use app\admin\model\Water;
+use app\admin\model\Wish;
 use think\Db;
 use think\Request;
 class Ajaxadmin extends \think\Controller
@@ -300,10 +303,10 @@ class Ajaxadmin extends \think\Controller
                     if($deletclose && $logrest){
                         Db::commit();// 提交事务
                         $state = '1111';
-                        $msg = "设置成功！";
+                        $msg = "删除成功！";
                     }else{
                         $state = '0001';
-                        $msg = "设置失败！";
+                        $msg = "删除失败！";
                     }
                 }catch (\Exception $e) {
                     Db::rollback();    // 回滚事务
@@ -322,5 +325,96 @@ class Ajaxadmin extends \think\Controller
                 return is_visit(2);
             }
     }
+
+    /**删除保险单
+     * @return array|string
+     */
+    public function DeleteInsurance(){
+        if(empty(is_visit(2))) {//访问是post是执行
+            $U['safeId'] = array();
+            $U['safeId'] =input('arr');//接受保险单号id数组
+            $U['uId'] = input('uId');
+            $time = time();
+            if (is_null1($U) == '0000') {
+                $state = '0000';
+                $msg = '必要参数不完整';
+            } else {
+                $logtb = new log();
+                DB::startTrans();
+                try {
+                    $uId['uId'] = $U['uId'];
+                    $deletInsurance = Safe::destroy($U['safeId']);
+                    $aa = cookie('adminuid');
+                    $logrest = $logtb->addlog($aa,'删除'.$U['uId'].'的保险单号id有'.json_encode($U['safeId'])."",$time);//增加管理员日志
+                    if($deletInsurance && $logrest){
+                        Db::commit();// 提交事务
+                        $state = '1111';
+                        $msg = "删除成功！";
+                    }else{
+                        $state = '0001';
+                        $msg = "删除失败！";
+                    }
+                }catch (\Exception $e) {
+                    Db::rollback();    // 回滚事务
+                    $state = '0002';
+                    $msg = "数据库操作失败";
+                }
+            }
+            $retrn = array(
+                'state'=>$state,
+                'msg'=>$msg,
+                'time'=>date("Y-m-d H:m:s",$time)
+            );
+        }else{
+            return is_visit(2);
+        }
+        return $retrn;
+    }
+
+    /**删除用户心愿表
+     * @return array
+     */
+    public function Deletewish(){
+        if(empty(is_visit(2))){
+            $U['uId'] = input('uId');
+            $U['wishId'] = input('id');
+            $time = time();
+//            dump($U);
+            if(is_null1($U)=='0000'){
+                $state = '0000';
+                $msg = "必要参数为空";
+            }else{
+                $logtb = new log();
+                DB::startTrans();
+                try {
+                    $uId['uId'] = $U['uId'];
+                    $deletInsurance = Wish::destroy($U['wishId']);
+                    $aa = cookie('adminuid');
+                    $logrest = $logtb->addlog($aa,'删除'.$U['uId'].'的保险单号id有'.json_encode($U['wishId'])."",$time);//增加管理员日志
+                    if($deletInsurance && $logrest){
+                        Db::commit();// 提交事务
+                        $state = '1111';
+                        $msg = "删除成功！";
+                    }else{
+                        $state = '0001';
+                        $msg = "删除失败！";
+                    }
+                }catch (\Exception $e) {
+                    Db::rollback();    // 回滚事务
+                    $state = '0002';
+                    $msg = "数据库操作失败";
+                }
+            }
+            $retrn = array(
+                'state'=>$state,
+                'msg'=>$msg,
+                'time'=>date("Y-m-d H:m:s",$time)
+            );
+            return $retrn;
+        }else{
+          return  is_visit(2);
+        }
+    }
+
 
 }

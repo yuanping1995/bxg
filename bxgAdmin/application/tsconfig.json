@@ -1,0 +1,5 @@
+//收件人json
+[{"name":"袁平","Mobile":"18233297067","address":"河北大学工商学院","log":"加快进度"}];
+//配送人信息json
+{"goodsid":1,"goodsname":"小米手机","Sellerid":1,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1,"freight":10}
+[{"goodsid":1,"Distribution":"快递","Distributionnumber":"16518233297067"},{"goodsid":2,"Distribution":"快递","Distributionnumber":"16518233297067"},{"goodsid":3,"Distribution":"快递","Distributionnumber":"16518233297067"}]

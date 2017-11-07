@@ -109,7 +109,7 @@
                         <li class="active"><a data-toggle="tab" href="#tab-1">基本信息</a></li>
                         <li class=""><a data-toggle="tab" href="#tab-2">亲密信息</a></li>
                         <li class=""><a data-toggle="tab" href="#tab-3">简历信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab-4">健康信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-4" onclick="asd()">健康信息</a></li>
                         <li class=""><a data-toggle="tab" href="#tab-5">商家扩展信息</a></li>
                         <li class=""><a data-toggle="tab" href="#tab-6">保险信息</a></li>
                         <li class=""><a data-toggle="tab" href="#tab-7">用户心愿</a></li>
@@ -674,13 +674,12 @@
                         </div>
                         <div id="tab-4" class="tab-pane">
                             <div class="full-height-scroll">
+                                {foreach name="arr['health']" id="vo"}
                                 <div class="ibox" style="margin-top:10px;">
                                     <div class="ibox-title navy-bg" style="min-height:35px;padding:10px 0 7px;border:none;border-radius:5px;">
                                         <ul style="list-style:none;">
-                                            <li class="col-sm-3">用户ID：123456</li>
-                                            <li class="col-sm-3">所患疾病：流行性感冒</li>
-                                            <li class="col-sm-3">就诊医院：省医院</li>
-                                            <li class="col-sm-3">就诊时间：2017-10-10 14:00</li>
+                                            <li class="col-sm-3">用户ID：{$vo.uId}</li>
+                                            <li class="col-sm-3">所患疾病：{$vo.Disease}</li>
                                         </ul>
                                     </div>
                                     <div class="ibox-content" style="border:2px solid #eee;border-top:none;">
@@ -688,64 +687,34 @@
                                             <table class="table">
                                                 <tbody>
                                                     <tr>
-                                                        <td>主诊医师：XXX</td>
-                                                        <td>审核ID：123456</td>
-                                                        <td>审核时间：2017-10-12 16:00</td>
-                                                        <td>证明人ID：456789</td>
+                                                        <td>主诊医师：{$vo.Attend}</td>
+                                                        <td>审核ID：{$vo.AuditId}</td>
+                                                        <td>审核时间： {$vo['AuditTime']|date="Y/m/d H:i:s",###}</td>
+                                                        <td>证明人ID：{$vo.WitnessID}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                         <div class="diagnosis-proof">
                                             <span>医院诊断证明：</span>
+                                           {$vo.Prove}
+
                                              <a class="imgBig" href="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg">
-                                                <img src="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg" width="150" height="80"/>
+                                                <img src="{$vo['Prove']}" width="150" height="80"/>
                                             </a>
                                             <a class="imgBig" href="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg">
                                                 <img src="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg" width="150" height="80"/>
                                             </a>
-                                            
+
                                             </a>
                                         </div>
 
                                     </div>
                                 </div>
-                                <div class="ibox" style="margin-top:10px;">
-                                    <div class="ibox-title navy-bg" style="min-height:35px;padding:10px 0 7px;border:none;border-radius:5px;">
-                                        <ul style="list-style:none;">
-                                            <li class="col-sm-3">用户ID：123456</li>
-                                            <li class="col-sm-3">所患疾病：流行性感冒</li>
-                                            <li class="col-sm-3">就诊医院：省医院</li>
-                                            <li class="col-sm-3">就诊时间：2017-10-10 14:00</li>
-                                        </ul>
-                                    </div>
-                                    <div class="ibox-content" style="border:2px solid #eee;border-top:none;">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>主诊医师：XXX</td>
-                                                        <td>审核ID：123456</td>
-                                                        <td>审核时间：2017-10-12 16:00</td>
-                                                        <td>证明人ID：456789</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="diagnosis-proof">
-                                            <span>医院诊断证明：</span>
-                                            <a class="imgBig" href="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg">
-                                                <img src="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg" width="150" height="80"/>
-                                            </a>
-                                            <a class="imgBig" href="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg">
-                                                <img src="http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg" width="150" height="80"/>
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
+                                {/foreach}
                             </div>
                         </div>
+
                         <div id="tab-5" class="tab-pane">
                             <div class="row full-height-scroll" style="padding-top:20px;">
                                 <div class="col-sm-3" style="border-right:1px solid #eee;">
