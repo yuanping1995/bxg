@@ -117,15 +117,15 @@
                         <!--<li class=""><a data-toggle="tab" href="#tab-8">订单信息</a></li>-->
                         <!--<li class=""><a data-toggle="tab" href="#tab-9">卡片信息</a></li>-->
 <!--=======-->
-                        <li class="active"><a data-toggle="tab" href="#tab_1">基本信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_2">亲密信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_3">简历信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_4">健康信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_5">商家扩展信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_6">保险信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_7">用户心愿</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_8">订单信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_9">卡片信息</a></li>
+                        <li class="active"><a data-toggle="tab" href="#tab_1" data-id="{$arr.uId}">基本信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_2" data-id="{$arr.uId}">亲密信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_3" data-id="{$arr.uId}">简历信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_4" data-id="{$arr.uId}">健康信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_5" data-id="{$arr.sellerid}">商家扩展信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_6" data-id="{$arr.uId}">保险信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_7" data-id="{$arr.uId}">用户心愿</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_8" data-id="{$arr.uId}">订单信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_9" data-id="{$arr.uId}">卡片信息</a></li>
 
                     </ul>
                   <div class="tab-content" >
@@ -364,17 +364,20 @@
 
             $('.nav-tabs a[data-toggle="tab"]').on('click', function (e) {
                 thref = (e.target.hash).substring(1);
-                // if($("#"+thref).html() == ''){
-                    tabAjax(thref);
-                // }
+                id = e.currentTarget.dataset.id;
+                var obj = "#"+thref;
+                if($(obj).html() == ''){
+                    tabAjax(thref,id);
+                }
             });
             
-            var thref = 'tab_1';
-            tabAjax(thref);
-            function tabAjax(thref){
+            var thref = $('.nav-tabs li:first a[data-toggle="tab"]').attr('href').substring(1);
+            var id = $('.nav-tabs li:first a[data-toggle="tab"]').attr('data-id');
+            tabAjax(thref,id);
+            function tabAjax(thref,id){
                 $.ajax({
                     type:'get',
-                    data:{id:{$arr.uId}},
+                    data:{id:id},
                     url:'{$Think.__APPROOT__}/index.php/admin/user/'+thref,
                     success:function(data){ 
                         if(data){
