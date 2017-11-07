@@ -22,26 +22,23 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <address>
-                                <p><strong>收件人：XXX</strong></p>
-                                <p><strong>地址：河北省保定市高新区</strong></p>
-                                <strong>手机号：18832862165</strong> 
+                                <p><strong>收件人：{$oder['Address'][0]['name']}</strong></p>
+                                <p><strong>地址：{$oder['Address'][0]['address']}</strong></p>
+                                <strong>手机号：{$oder['Address'][0]['Mobile']}</strong>
                             </address>
                         </div>
 
                         <div class="col-sm-6 text-right">
                             <h4>订单编号：</h4>
-                            <h4 class="text-navy">bxg123456789</h4>
+                            <h4 class="text-navy">{$oder['Mergeid']}</h4>
                             <p>
-								<span><strong>配送人：</strong> XXX</span>
-                            </p>
-                            <p>
-                                <span><strong>下单时间：</strong> 2014-11-11</span>
+                                <span><strong>下单时间：</strong> {$oder['Placetime']|date="Y/m/d H:i:s",###}</span>
                             </p>
                         </div>
                     </div>
-
+                    {foreach name="arr" id="vo" key="k"}
                     <div class="table-responsive m-t">
-                    	<h3 class="alert alert-success">商家：邻家女孩</h3>
+                    	<h3 class="alert alert-success">商家:{$vo[0]['Sellerid']}</h3>
                         <table class="table invoice-table">
                             <thead>
                                 <tr>
@@ -51,79 +48,29 @@
                                     <th>收益</th>
                                     <th>总价</th>
                                     <th>订单状态</th>
+                                    <th>配送状态</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            {foreach name="vo" id="vo_1" key="k"}
                                 <tr>
                                     <td>
-                                        <div><strong>尚都比拉2013冬装新款女装 韩版修身呢子大衣 秋冬气质羊毛呢外套</strong>
+                                        <div><strong>{$vo_1.goodsname}</strong>
                                         </div>
                                     </td>
-                                    <td>1</td>
-                                    <td>&yen;26.00</td>
-                                    <td>&yen;1.20</td>
-                                    <td>&yen;31,98</td>
-                                    <td>待发货</td>
+                                    <td>{$vo_1.bugnum}</td>
+                                    <td>&yen;{$vo_1.goodsmoney}</td>
+                                    <td>&yen;{$vo_1.bugnum*$vo_1.goodsmoney*0.04}</td>
+                                    <td>&yen;{$vo_1.bugnum*$vo_1.goodsmoney}</td>
+                                    <td>{$vo_1.goodsstate}</td>
+                                    <td>{$Delivery[$vo_1.goodsid]['Distribution']}:{$Delivery[$vo_1.goodsid]['Distributionnumber']}</td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div><strong>11*11夏娜 新款斗篷毛呢外套 女秋冬呢子大衣 韩版大码宽松呢大衣</strong>
-                                        </div>
-                                        <small>双十一特价
-                                            </small>
-                                    </td>
-                                    <td>2</td>
-                                    <td>&yen;80.00</td>
-                                    <td>&yen;1.20</td>
-                                    <td>&yen;196.80</td>
-                                    <td>待发货</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="table-responsive m-t">
-                    	<h3 class="alert alert-success">商家：依然美女装</h3>
-                        <table class="table invoice-table">
-                            <thead>
-                                <tr>
-                                    <th>清单</th>
-                                    <th>数量</th>
-                                    <th>单价</th>
-                                    <th>收益</th>
-                                    <th>总价</th>
-                                    <th>订单状态</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div><strong>尚都比拉2013冬装新款女装 韩版修身呢子大衣 秋冬气质羊毛呢外套</strong>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>&yen;26.00</td>
-                                    <td>&yen;1.20</td>
-                                    <td>&yen;31,98</td>
-                                    <td>待发货</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div><strong>11*11夏娜 新款斗篷毛呢外套 女秋冬呢子大衣 韩版大码宽松呢大衣</strong>
-                                        </div>
-                                        <small>双十一特价
-                                            </small>
-                                    </td>
-                                    <td>2</td>
-                                    <td>&yen;80.00</td>
-                                    <td>&yen;1.20</td>
-                                    <td>&yen;196.80</td>
-                                    <td>待发货</td>
-                                </tr>
+                            {/foreach}
 
                             </tbody>
                         </table>
                     </div>
+              {/foreach}
                     <!-- /table-responsive -->
 
                     <table class="table invoice-total">
@@ -131,17 +78,17 @@
                             <tr>
                                 <td><strong>总价：</strong>
                                 </td>
-                                <td>&yen;1026.00</td>
+                                <td>&yen;{$Total}</td>
                             </tr>
                             <tr>
                                 <td><strong>运费：</strong>
                                 </td>
-                                <td>(&yen;10 + &yen;10)共计&yen;20</td>
+                                <td> 共计&yen;{$freight}</td>
                             </tr>
                             <tr>
                                 <td><strong>总计：</strong>
                                 </td>
-                                <td>&yen;1261.98</td>
+                                <td>&yen;{$Total+$freight}</td>
                             </tr>
                         </tbody>
                     </table>

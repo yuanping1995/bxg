@@ -16,4 +16,7 @@ class BasicOder  extends Model
     {
         return   $this->belongsTo("BasicOder", "uId", "id");
     }
+    public function Seller(){
+        return $this->hasOne("Seller","shopId","");
+    }
 }

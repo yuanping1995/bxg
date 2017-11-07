@@ -106,166 +106,31 @@
                 <a href="{:url('admin/index/user_list')}" class="btn btn-primary">返回上一级</a>
                 <div class="clients-list">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#tab_1">基本信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_2">亲密信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_3">简历信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_4">健康信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_5">商家扩展信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_6">保险信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_7">用户心愿</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_8">订单信息</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab_9">卡片信息</a></li>
+
+                        <!--<li class="active"><a data-toggle="tab" href="#tab-1">基本信息</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-2">亲密信息</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-3">简历信息</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-4" onclick="asd()">健康信息</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-5">商家扩展信息</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-6">保险信息</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-7">用户心愿</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-8">订单信息</a></li>-->
+                        <!--<li class=""><a data-toggle="tab" href="#tab-9">卡片信息</a></li>-->
+<!--=======-->
+                        <li class="active"><a data-toggle="tab" href="#tab_1" data-id="{$arr.uId}">基本信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_2" data-id="{$arr.uId}">亲密信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_3" data-id="{$arr.uId}">简历信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_4" data-id="{$arr.uId}">健康信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_5" data-id="{$arr.sellerid}">商家扩展信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_6" data-id="{$arr.uId}">保险信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_7" data-id="{$arr.uId}">用户心愿</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_8" data-id="{$arr.uId}">订单信息</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab_9" data-id="{$arr.uId}">卡片信息</a></li>
+
                     </ul>
-                    <div class="tab-content" >
-                        <!-- 用户充值弹窗 -->
-                        <div class="modal outmodal" id="upGrade" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
-                                        </button>
-                                        <h4 class="modal-title">会员升级</h4>
-                                        <div class="modal-body">
-                                            <form role="form" class="form-horizontal m-t">
-                                                 <div class="form-group draggable">
-                                                    <label class="col-sm-3 control-label">等级：</label>
-                                                    <div class="col-sm-9 grade">
-                                                        <div class="col-sm-3 radio i-checks" >
-                                                            <label><input type="radio" checked="" value="2" name="grade" data-gmoney="20" data-grade="vip"><i></i>vip</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="3" name="grade" data-gmoney="30" data-grade="svip"> <i></i>svip</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="4" name="grade" data-gmoney="50" data-grade="ovip"> <i></i> ovip</label>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </div>
-                                                <div class="form-group draggable">
-                                                    <label class="col-sm-3 control-label">升级金额：</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" value="20" name="upgrade" disabled="disabled" style="padding-left:10px;border:1px solid #ccc;background:#fff;">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary saveGrade" data-dismiss="modal">保存</button>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                         <!-- 用户角色设置弹窗 -->
-                        <div class="modal outmodal" id="setRole" tabindex="-1" role="dialog" aria-hidden="false">
-                            <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
-                                        </button>
-                                        <h4 class="modal-title">设置用户角色</h4>
-                                        <div class="modal-body">
-                                            <form role="form" class="form-horizontal m-t">
-                                                <div class="form-group draggable">
-                                                    <label class="col-sm-2 control-label">角色：</label>
-                                                    <div class="col-sm-10 setRole">
-                                                        <div class="col-sm-3 radio i-checks" >
-                                                            <label><input type="radio" checked="" value="1" data-role="用户" name="role"> <i></i>用户</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="2" data-role="商家" name="role"> <i></i> 商家</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="3" data-role="站点" name="role"> <i></i> 站点</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="4" data-role="员工" name="role"> <i></i> 员工</label>
-                                                        </div>
-                                                        <div class="col-sm-3 radio i-checks">
-                                                            <label><input type="radio"  value="5" data-role="兼职" name="role"> <i></i> 兼职</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary saveRole" data-dismiss="modal">保存</button>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <!-- 用户认证状态弹窗 -->
-                         <div class="modal outmodal" id="identify" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
-                                        </button>
-                                        <h4 class="modal-title">预览身份认证信息</h4>
-                                        <div class="row modal-body">
-                                            <div class="col-sm-12">
-                                                <p>姓名：XXX</p>
-                                                <p>身份证号：1111111111111111111111111</p>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <h4>正面照</h4>
-                                                <a class="imgBig" href="http://sz.focus.cn/upload/photos/1786/K5cdnU75.jpg">
-                                                    <img class="identify-img" src="http://sz.focus.cn/upload/photos/1786/K5cdnU75.jpg"/>
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <h4>背面照</h4>
-                                                <a class="imgBig" href="http://d.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf24971f4ebb17eca8064388f9d.jpg">
-                                                    <img class="identify-img" src="http://d.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf24971f4ebb17eca8064388f9d.jpg"/>
-                                                </a>
-                                           </div>
-                                        </div>
-                                       
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <!-- 用户信用值提升弹窗 -->
-                        <div class="modal outmodal" id="credit" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
-                                        </button>
-                                        <h4 class="modal-title">提升信用值</h4>
-                                        <div class="modal-body">
-                                            <form role="form" class="form-horizontal m-t">
-                                                <div class="form-group draggable">
-                                                    <label class="col-sm-3 control-label">提升值：</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="number" name="credit" placeholder ="请输入提升值" style="margin-top:-5px;padding:5px;">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group draggable">
-                                                    <label class="col-sm-3 control-label">理由：</label>
-                                                    <div class="col-sm-9">
-                                                        <textarea cols="35" name="credit_content" rows="5" style="resize:none;"></textarea>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary saveCredit" data-dismiss="modal">保存</button>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
+                  <div class="tab-content" >
+
+
 
                         <div id="tab_1" class="tab-pane active" style="margin-top:20px;"></div>
                         <div id="tab_2" class="tab-pane" style="margin-top:20px;"></div>
@@ -276,6 +141,7 @@
                         <div id="tab_7" class="tab-pane" style="margin-top:20px;"></div>
                         <div id="tab_8" class="tab-pane" style="margin-top:20px;"></div>
                         <div id="tab_9" class="tab-pane" style="margin-top:20px;"></div>
+
                     </div>
                 </div>
             </div>
@@ -498,17 +364,20 @@
 
             $('.nav-tabs a[data-toggle="tab"]').on('click', function (e) {
                 thref = (e.target.hash).substring(1);
-                // if($("#"+thref).html() == ''){
-                    tabAjax(thref);
-                // }
+                id = e.currentTarget.dataset.id;
+                var obj = "#"+thref;
+                if($(obj).html() == ''){
+                    tabAjax(thref,id);
+                }
             });
             
-            var thref = 'tab_1';
-            tabAjax(thref);
-            function tabAjax(thref){
+            var thref = $('.nav-tabs li:first a[data-toggle="tab"]').attr('href').substring(1);
+            var id = $('.nav-tabs li:first a[data-toggle="tab"]').attr('data-id');
+            tabAjax(thref,id);
+            function tabAjax(thref,id){
                 $.ajax({
-                    type:'post',
-                    data:{id:{$arr.uId}},
+                    type:'get',
+                    data:{id:id},
                     url:'{$Think.__APPROOT__}/index.php/admin/user/'+thref,
                     success:function(data){ 
                         if(data){

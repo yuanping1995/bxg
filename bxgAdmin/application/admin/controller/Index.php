@@ -54,12 +54,14 @@ class Index extends \think\Controller
     //用户信息
     public function user_info(){
         $uId['uId']  = input("id");
-        $list = info::with("honor,follow,Collection,agreement,resume,recommend,close")->where($uId)->find()->toArray();
+        $list = info::with("honor,follow,Collection,agreement,resume,recommend,close,Health,seller")->where($uId)->find()->toArray();
         $recommendcId['uId'] = $list['recommend']['uId'];
         $recommendinfo = Recommend::with("info")->where($recommendcId)->find();
         if(!empty($recommendinfo)){
               $recommendinfo = $recommendinfo->toArray();
-        }
+        }//dump($list);
+//        $list[''] = json_decode();
+//        for ($i=0;$i<count($list['health']);$)
         $list['recommend']['CoverId'] = $recommendinfo['info'];
         $list['Upower'] =  Membership($list['Upower']);
         $list['Role'] = Role($list['Role']);
@@ -72,7 +74,7 @@ class Index extends \think\Controller
     public function Download(){
         $input['uId'] = input('uId');
         $resumeinfo = Resume::where($input)->find()->toArray();
-
+$Experjson = json_decode($resumeinfo['Experjson']);
 
                             echo '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
                     <head>
@@ -81,16 +83,7 @@ class Index extends \think\Controller
                     </head>';
                             echo '<table class="table_dayin">';
                             echo'<table width="587">
-    <colgroup>
-        <col width="125"/>
-        <col width="126"/>
-        <col width="172"/>
-        <col width="72"/>
-        <col width="72"/>
-        <col width="72"/>
-        <col width="72"/>
-        <col width="72"/>
-    </colgroup>
+   
     <tbody>
         <tr class="firstRow">
             <td class="et2" rowspan="6" width="93" style="font-size: 12pt; text-align: center; vertical-align: top; border-width: 0.5pt; border-color: rgb(0, 0, 0);"></td>
@@ -230,33 +223,33 @@ class Index extends \think\Controller
             <td class="et28" colspan="7" width="534" style="font-size: 12pt; text-align: center; vertical-align: middle; border-width: 0.5pt; border-color: rgb(0, 0, 0); background: rgb(208, 206, 206);">
                 工作经历（WORK&nbsp;EXPERIENCE）
             </td>
-        </tr>
-        <tr>
+        </tr>';
+                            for($i=0;$i<count($Experjson);$i++){
+                                $asd=object2array($Experjson[$i]);
+//                                dump();
+                                echo '<tr>
             <td class="et31" width="94" style="font-size: 12pt; text-align: center; vertical-align: middle; border-width: 0.5pt; border-color: rgb(0, 0, 0);">
-                时间
+                '.$asd['time'].'
             </td>
             <td class="et32" colspan="3" width="312" style="font-size: 12pt; text-align: center; vertical-align: middle; border-width: 0.5pt; border-color: rgb(0, 0, 0);">
-                公司
+               '.$asd['gsnaem'].'
             </td>
             <td class="et32" colspan="3" width="162" style="font-size: 12pt; text-align: center; vertical-align: middle; border-width: 0.5pt; border-color: rgb(0, 0, 0);">
-                职位
+                '.$asd['gz'].'
             </td>
         </tr>
-        <tr>
-            <td class="et34" colspan="7" rowspan="2" width="534" style="font-size: 12pt; vertical-align: top; border-width: 0.5pt; border-color: rgb(0, 0, 0);">
-                描述
-            </td>
-        </tr>
-        <tr></tr>
+         ';};
+        echo '  
       
-        <tr></tr>
-        <tr></tr>
+        
+        
     </tbody>
 </table>
 <p>
     <br/>
 </p>';
         echo '</table>';
+
         ob_start(); //打开缓冲区
         header("Cache-Control: public");
         Header("Content-type: application/octet-stream");
@@ -272,7 +265,15 @@ class Index extends \think\Controller
         header("Expires:0");
         ob_end_flush();//输出全部内容到浏览器
     }
+    public function Healthselect(){
+        $uId['uId']  = input("id");
+        $list = info::with("Health")->where($uId)->find()->toArray();
+        return json($list);
 
-
+    }
+    /*
+     *   [{"goodsname":"小米手机","Sellerid":1,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机1","Sellerid":1,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机2","Sellerid":2,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机3","Sellerid":1,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机","Sellerid":3,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机","Sellerid":4,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机","Sellerid":1,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机","Sellerid":2,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机","Sellerid":1,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1},{"goodsname":"小米手机","Sellerid":2,"goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1}]
+     * [{"goodsname":"小米手机","goodsmoney":1258,"goodspoints":0.1,"goodsimg":"http://bxgogo.oss-cn-beijing.aliyuncs.com/imagesgoodsimg/20170825201708251537141754.jpeg","bugnum":2,"goodscode":123456,"activityid":1,"dmoney":2,"goodsstate":1}]
+     */
 
 }
