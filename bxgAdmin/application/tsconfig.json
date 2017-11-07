@@ -5,6 +5,5 @@
 [{"goodsid":1,"Distribution":"快递","Distributionnumber":"16518233297067"},{"goodsid":2,"Distribution":"快递","Distributionnumber":"16518233297067"},{"goodsid":3,"Distribution":"快递","Distributionnumber":"16518233297067"}]
 {{"name":"颜色","data":{"red":1000,"sss":1000,}},{"name":"颜色1","data":{"red":1001,"sss":1000,}}}
 //        身份证
-[{"Positive":"https://gss0.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ff1b33aa6659252da342150204ab2f03/377adab44aed2e73ad36579c8101a18b86d6faa7.jpg","back":"https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=9edb4679a6af2eddd4f14eefb52b66d4/eac4b74543a98226272e13588082b9014b90ebe6.jpg"}]
-[{"time":"2015-2017","gsnaem":"百信购","gz":3000,"describe":"惺惺惜惺惺想寻寻寻寻下次下次下次想","project":"百信购平台"},{"time":"2015-2017","gsnaem":"百信购","gz":3000,"describe":"惺惺惜惺惺想寻寻寻寻下次下次下次想","project":"百信购平台"}]
+{"Positive":"http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg","back":"http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg"}
 [{"Name":"颜色", "data": ["红色", "黑色","白色", "蓝色", "粉色"]},{"Name":"颜色", "data": ["红色", "黑色","白色", "蓝色", "粉色"]},{"Name":"颜色", "data": ["红色", "黑色","白色", "蓝色", "粉色"]}]

@@ -49,8 +49,12 @@ class User extends \think\Controller
 		return $this->fetch();
 	}
 	public function tab_5(){
-	    $uId['shopid'] = input("shopid");
-	    $Seller = Seller::where()->find()->toArray();
+	    $uId['shopid'] = 1;
+	    $Seller = Seller::where($uId)->find()->toArray();
+
+	    $Seller['Patentimg'] = object2array(json_decode($Seller['Patentimg']));
+  
+	    $this->assign("Seller",$Seller);
 		return $this->fetch();
 	}
 	public function tab_6(){
