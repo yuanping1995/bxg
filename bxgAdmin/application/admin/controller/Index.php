@@ -25,8 +25,6 @@ class Index extends \think\Controller
        return $this->fetch();
     }
 
-
-
 // 用户管理
 
     // 用户列表

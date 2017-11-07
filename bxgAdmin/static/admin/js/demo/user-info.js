@@ -81,22 +81,7 @@ function buildTable($el, cells, rows) {
   'use strict';
   // 用户信息表
   (function() {
-    $('#exampleTableEvents').bootstrapTable({
-      search: true,
-      pagination: true,
-      showRefresh: true,
-      showToggle: true,
-      showColumns: true,
-      pageSize: 12,
-      pageList: [6, 12],
-      iconSize: 'outline',
-      toolbar: '#exampleTableEventsToolbar',
-      icons: {
-        refresh: 'glyphicon-repeat',
-        toggle: 'glyphicon-list-alt',
-        columns: 'glyphicon-list'
-      }
-    });
+    
     // 亲密关系信息
     (function() {
       $('#close').bootstrapTable({

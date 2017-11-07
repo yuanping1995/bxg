@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_list.html";i:1509777034;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_list.html";i:1510016824;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +15,7 @@
     <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
     <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
-        <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
     <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
@@ -130,12 +130,12 @@
                         <!-- example -->
                         <div class="example-wrap">
                             <div class="example">
-                                <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                                <div class="btn-group hidden-xs" id="listToolbar" role="group">
                                     <button type="button" class="btn btn-outline btn-default">
                                         <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                                     </button>
                                 </div>
-                                <table id="exampleTableEvents" data-height="725" data-mobile-responsive="true">
+                                <table id="list" data-height="725" data-mobile-responsive="true">
                                     <thead>
                                         <tr>
                                             <th data-field="state" data-checkbox="true"></th>
@@ -204,7 +204,7 @@
     <!-- 以下是自定义js -->
     <script src="<?php echo __APPROOT__; ?>/static/admin/js/content.js?v=1.0.0"></script>
     <!-- Peity -->
-    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/user-info.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/user-list.js"></script>
     <!-- 图片上传 -->
     <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/compress.js"></script>
     
