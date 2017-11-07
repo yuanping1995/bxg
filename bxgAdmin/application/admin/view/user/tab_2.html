@@ -1,0 +1,41 @@
+ <div class="example-wrap">
+    <div class="example">
+        <div class="btn-group hidden-xs" id="closeToolbar" role="group">
+            <button id="closeBtn" type="button" class="btn btn-outline btn-default">
+                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+            </button>
+        </div>
+        <table id="close" data-height="580" data-mobile-responsive="true">
+            <thead>
+                <tr>
+                    <th data-field="state" data-checkbox="true"></th>
+                    <th data-field="id">ID</th>
+                    <th data-field="closeid">亲密人ID</th>
+                    <th data-field="closetype">亲密类型</th>
+                    <th data-field="intimacy">亲密度</th>
+                    <th data-field="intime">加入时间</th>
+                    <th data-field="closeStadus">亲密状态</th>
+                </tr>
+            </thead>
+            <tbody>
+            {foreach name="arr['close']" id="vo"}
+                <tr data-uid="{$vo.uId}">
+                    <td></td>
+                    <td>{$vo.Id}</td>
+                    <td>{$vo.Closeid}</td>
+                    <td>{if condition="($vo.Closetype == 1)  "} 家人
+                        {else /}好友
+                        {/if}</td>
+                    <td>{$vo.Intimacy}</td>
+                    <td>  {$vo.Intime|date="Y/m/d",###}</td>
+                    <td><span class="label label-primary">
+                        {if condition="($vo.Status == 1)  "}已核实{else /}未核实
+                        {/if}</span></td>
+                </tr>
+            {/foreach}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="{$Think.__APPROOT__}/static/admin/js/demo/user-info.js"></script>

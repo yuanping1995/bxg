@@ -256,5 +256,34 @@ function oderstate($arr){
     return $arr;
 }
 
+/**性别
+ * @param $arr
+ */
+function Sex($arr){
+    switch ($arr){
+        case 1:$arr = "男";
+        break;
+        case 2:$arr = "女";
+        break;
+        case 3: $arr = "保密";
+        break;
+        default:
+            $arr = "参数错误!";
+    }
+    return $arr;
+}
+function Mstatus($arr){
+    switch ($arr){
+        case 2:$arr = "已婚";
+            break;
+        case 1:$arr = "未婚";
+            break;
+        case 3: $arr = "保密";
+            break;
+        default:
+            $arr = "参数错误!";
+    }
+    return $arr;
+}
 
 

@@ -81,22 +81,7 @@ function buildTable($el, cells, rows) {
   'use strict';
   // 用户信息表
   (function() {
-    $('#exampleTableEvents').bootstrapTable({
-      search: true,
-      pagination: true,
-      showRefresh: true,
-      showToggle: true,
-      showColumns: true,
-      pageSize: 12,
-      pageList: [6, 12],
-      iconSize: 'outline',
-      toolbar: '#exampleTableEventsToolbar',
-      icons: {
-        refresh: 'glyphicon-repeat',
-        toggle: 'glyphicon-list-alt',
-        columns: 'glyphicon-list'
-      }
-    });
+    
     // 亲密关系信息
     (function() {
       $('#close').bootstrapTable({
@@ -113,9 +98,56 @@ function buildTable($el, cells, rows) {
           refresh: 'glyphicon-repeat',
           toggle: 'glyphicon-list-alt',
           columns: 'glyphicon-list'
-        }
+        },
+
       });
     })();
+    // 删除亲密人
+    // $("#closeBtn").on('click',function(){
+    //   console.log($('#close').bootstrapTable('getAllSelections'));
+    // });
+    
+    $("#closeBtn").on('click',function(){
+
+      var id,uid;
+      $.map($('#close').bootstrapTable('getSelections'), function (row,data) {
+         id = row.id;
+         uid = row._data.uid;
+      });
+      if(id === undefined){
+
+      }else{
+        $.ajax({
+          type:'post',
+          data:{uId:uid,arr:id},
+          url:'../../../../api/Ajaxadmin/Deleteclose',
+          success:function(data){
+              var data = eval(data);
+              if(data.state === '1111'){
+                swal({
+                  title: data.msg,
+                  type: "success"
+                });
+                $('#close').bootstrapTable('remove', {field: 'id', values: id});
+              }else{
+                swal({
+                  title: "操作失败",
+                  type: "error"
+                });
+              }
+          },
+          error:function(data){
+
+              swal({
+                  title: "网络出现问题！",
+                  type: "error"
+              });
+          }
+        });
+      }
+
+      
+    });
     // 保险信息表
     (function() {
       $('#insurance').bootstrapTable({
@@ -192,42 +224,6 @@ function buildTable($el, cells, rows) {
         }
       });
     })();
-
-    var $result = $('#examplebtTableEventsResult');
-
-    $('#exampleTableEvents').on('all.bs.table', function(e, name, args) {
-        console.log('Event:', name, ', data:', args);
-      })
-      
-      .on('sort.bs.table', function(e, name, order) {
-        $result.text('Event: sort.bs.table');
-      })
-      .on('check.bs.table', function(e, row) {
-        $result.text('Event: check.bs.table');
-      })
-      .on('uncheck.bs.table', function(e, row) {
-        $result.text('Event: uncheck.bs.table');
-      })
-      .on('check-all.bs.table', function(e) {
-        $result.text('Event: check-all.bs.table');
-      })
-      .on('uncheck-all.bs.table', function(e) {
-        $result.text('Event: uncheck-all.bs.table');
-      })
-      .on('load-success.bs.table', function(e, data) {
-        $result.text('Event: load-success.bs.table');
-      })
-      .on('load-error.bs.table', function(e, status) {
-        $result.text('Event: load-error.bs.table');
-      })
-      .on('column-switch.bs.table', function(e, field, checked) {
-        $result.text('Event: column-switch.bs.table');
-      })
-      .on('page-change.bs.table', function(e, size, number) {
-        $result.text('Event: page-change.bs.table');
-      })
-      .on('search.bs.table', function(e, text) {
-        $result.text('Event: search.bs.table');
-      });
+    
   })();
 })(document, window, jQuery);

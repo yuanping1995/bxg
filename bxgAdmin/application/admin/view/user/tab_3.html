@@ -1,0 +1,120 @@
+<div class="row full-height-scroll">
+    <div class="col-sm-3">
+        <div class="resumeAvactor">
+            <img src="{$arr['resume']['Photo']}">
+
+
+            <!--<button class="btn btn-success dim btn-large-dim" type="button" title="下载简历"><i class="fa fa-download"></i>-->
+              <!--</button>-->
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="ibox float-e-margins">
+            <!--工作-->
+            <div class="ibox-content" style="border:none;">
+                <div class="alert alert-success">
+                    基本资料<small>（BASIC MATERIAL）</small>
+                </div>
+                <div class="basic" style="padding:0 15px;">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>姓名：{$arr['resume']['Idname']}</td>
+                                <td>学历：{$arr['resume']['Education']}</td>
+                            </tr>
+                            <tr>
+                                <td>性别：{$arr['resume']['Sex']}</td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>婚姻状态：{$arr['resume']['Mstatus']}</td>
+                                <td>出生日期：{$arr['resume']['birthday'] |date="Y/m/d ",###}</td>
+
+                            </tr>
+                            <tr>
+                                <td>期望薪资：{$arr['resume']['Salary']}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="alert alert-info">
+                    联系方式<small>（CONTACT WAY）</small>
+                </div>
+                <div class="contact" style="padding:0 15px;">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>联系电话：{$arr['resume']['Moblie']}</td>
+                                <td>QQ：{$arr['resume']['QQ']}</td>
+                            </tr>
+                            <tr>
+                                <td>电子邮箱：{$arr['resume']['Email']}</td>
+
+                            </tr>
+                            <tr>
+                                <td>住址：{$arr['resume']['Address']}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-warning">
+                    职业技能<small>（VOCATIONAL SKILLS）</small>
+                </div>
+                <div class="skills" style="padding:0 15px;">
+                    <ol style="padding:0 15px;line-height:30px;">
+                        <li>{$arr['resume']['Skill']}</li>
+
+                    </ol>
+                </div>
+
+                <div class="alert alert-danger">
+                    工作经历<small>（WORK EXPERIENCE）</small>
+                </div>
+                <div class="work" >
+                    <div class="panel-body">
+                        <div class="panel-group" id="accordion">
+                            {foreach name="$arr['resume']['Experjson']" id="vo_1"}
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="tabs_panels.html#collapseOne">
+                                            <ul class="row" style="padding:0;list-style:none;text-align:left;">
+                                                <li class="col-sm-4">{$vo_1.time}</li>
+                                                <li class="col-sm-4">{$vo_1.gsnaem}</li>
+                                                <li class="col-sm-4">{$vo_1.gz}</li>
+                                            </ul>
+
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                       <div>
+                                            项目名称：{$vo_1.project}
+                                        </div>
+                                        <div>
+                                            工作描述：{$vo_1.describe}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/foreach}
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

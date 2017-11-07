@@ -10,7 +10,21 @@ class Order extends \think\Controller
 {
 
 
-    public function order_list(){
+
+    public function order_list()
+    {
+    }
+    // ��ͨ�����б�
+    public function common_order(){
+        return $this->fetch();
+    }
+    // Ԥ�������б�
+    public function reserve_order(){
+        return $this->fetch();
+    }
+    // ���������б�
+    public function belong_order(){
+
         return $this->fetch();
     }
 
@@ -18,6 +32,7 @@ class Order extends \think\Controller
         $U['uId'] = input('uId');
         $oder = BasicOder::where($U)->find()->toArray();
         $oderdata1   = json_decode($oder['Goods'],true);
+        dump($oderdata1);exit;
         $Address   = json_decode($oder['Address'],true);
         $Delivery   = json_decode($oder['Delivery'],true);
             is_array($oderdata1)?null:$oderdata1 = array();
@@ -34,6 +49,7 @@ class Order extends \think\Controller
                      $freight+= $result[$Sellerid['shopId']][$i]['freight'] ;
                  }
             }
+
         foreach ($Delivery as $key=>$dinfo){
             $goodsid['goodsid'] = $dinfo['goodsid'];
             $resultDelivery[  $goodsid['goodsid']]= $dinfo;

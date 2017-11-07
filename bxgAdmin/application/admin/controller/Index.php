@@ -25,8 +25,6 @@ class Index extends \think\Controller
        return $this->fetch();
     }
 
-
-
 // 用户管理
 
     // 用户列表
@@ -61,7 +59,7 @@ class Index extends \think\Controller
         $recommendinfo = Recommend::with("info")->where($recommendcId)->find();
         if(!empty($recommendinfo)){
               $recommendinfo = $recommendinfo->toArray();
-        }dump($list);
+        }//dump($list);
 //        $list[''] = json_decode();
 //        for ($i=0;$i<count($list['health']);$)
         $list['recommend']['CoverId'] = $recommendinfo['info'];
