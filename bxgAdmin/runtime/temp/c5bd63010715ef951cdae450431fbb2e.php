@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1509700132;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\index.html";i:1510024936;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -72,6 +72,24 @@
                         <ul class="nav nav-second-level">
                             <li>
                                 <a class="J_menuItem" href="<?php echo url('admin/index/user_list'); ?>">用户信息</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="<?php echo url('admin/user/user_earnings'); ?>">用户收益明细</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="<?php echo url('admin/count/index'); ?>" data-index="0">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">商家管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="<?php echo url('admin/seller/index'); ?>">商家列表</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="<?php echo url('admin/seller/seller_earnings'); ?>">商家收益</a>
                             </li>
                         </ul>
                     </li>

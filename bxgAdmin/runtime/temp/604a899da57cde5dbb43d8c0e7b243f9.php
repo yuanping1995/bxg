@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_list.html";i:1510016824;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\index\user_list.html";i:1510019703;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -203,7 +203,7 @@
 
     <!-- 以下是自定义js -->
     <script src="<?php echo __APPROOT__; ?>/static/admin/js/content.js?v=1.0.0"></script>
-    <!-- Peity -->
+    <!-- 表格 -->
     <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/user-list.js"></script>
     <!-- 图片上传 -->
     <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/compress.js"></script>

@@ -1,0 +1,123 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpStudy\WWW\bxg\bxgAdmin/./application/admin\view\user\user_earnings.html";i:1510021937;}*/ ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>百信购后台管理</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="<?php echo __APPROOT__; ?>/favicon.ico"> 
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/plugins/animate.css" rel="stylesheet">
+    <link href="<?php echo __APPROOT__; ?>/static/admin/css/style.css?v=4.1.0" rel="stylesheet">
+    <style type="text/css">
+		.avatar{display: block;width:30px;height:30px;}
+        .avatar img{display: block;width:100%;height:100%;}
+        .modal-title{padding-bottom:10px;text-align: center;border-bottom: 1px solid #ccc;}
+        #showAvactor{margin:0 0 10px;text-align: center;}
+        #showAvactor img{margin:0 auto;}
+    </style>
+</head>
+<body class="gray-bg">
+	 <div class="wrapper wrapper-content animated"> 
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>用户收益明细</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">选项1</a>
+                        </li>
+                        <li><a href="#">选项2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+           <!-- 用户列表搜索 -->
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <!-- example -->
+                        <div class="example-wrap">
+                            <div class="example">
+                                <div class="btn-group hidden-xs" id="listToolbar" role="group">
+                                    <button type="button" class="btn btn-outline btn-default">
+                                        <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <table id="list" data-height="725" data-mobile-responsive="true">
+                                    <thead>
+                                        <tr>
+                                            <th data-field="state" data-checkbox="true"></th>
+                                            <th data-field="uid">用户ID</th>
+                                            <th data-field="nickname">昵称</th>
+                                            <th data-field="avatar">用户头像</th>
+                                            <th data-field="totalFee">账户余额</th>
+                                            <th data-field="profit">收益总额</th>
+                                            <th data-field="dayProfit">每日收益</th>
+                                            <th data-field="yesProfit">昨日收益</th>
+                                            <th data-field="addProfit">累计收益</th>
+                                            <th data-field="discount">优惠总额</th>
+                                            <th data-field="profitime">最后收益时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>123</td>
+                                            <td>袁平</td>
+                                            <td><span class="avatar"><img src="http://img1.3lian.com/gif/more/11/2012/03/392e4d0fec8050b0b7fc47d665721718.gif" width="70" height="70"/></span></td>
+                                            <td>100</td>
+                                            <td>60</td>
+                                            <td>2</td>
+                                            <td>2</td>
+                                            <td>50</td>
+                                            <td>100</td>
+                                            <td>2017-11-07</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- End example-wrap -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End ibox -->
+    </div>
+	<!-- 全局js -->
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- Bootstrap table -->
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- iCheck -->
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- 表格 -->
+    <script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/user-list.js"></script>
+
+</body>
+</html>

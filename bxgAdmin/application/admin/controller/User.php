@@ -46,4 +46,7 @@ class User extends \think\Controller
 	public function tab_9(){
 		return $this->fetch();
 	}
+	public function user_earnings(){
+		return $this->fetch();
+	}
 }
