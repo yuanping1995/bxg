@@ -2,6 +2,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\BasicOder;
+use app\admin\model\Card;
 use app\admin\model\info;
 use app\admin\model\Recommend;
 use app\admin\model\Seller;
@@ -69,14 +70,20 @@ class User extends \think\Controller
 	}
 	public function tab_8(){
 	    $U['uId'] = input("id");
-//	    dump($U);
 	    $oder = BasicOder::where($U)->paginate()->toArray();
-//	    dump($oder);
 	    $this->assign("BasicOder",$oder['data']);
 		return $this->fetch();
 	}
 	public function tab_9(){
-		return $this->fetch();
+        $U['uId'] = input("id");
+        $card = Card::with('Coupon')->where($U)->find();
+        if($card){
+            $card = $card->toArray();
+            $this->assign("arr_1",$card);
+        }else{
+
+        }
+        return $this->fetch();
 	}
 	public function user_earnings(){
 		return $this->fetch();

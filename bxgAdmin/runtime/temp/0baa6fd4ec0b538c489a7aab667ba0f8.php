@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\user\tab_6.html";i:1510103504;}*/ ?>
 <div class="example-wrap">
     <div class="example">
         <div class="btn-group hidden-xs" id="insuranceToolbar" role="group">
@@ -22,23 +23,22 @@
             </thead>
             <tbody>
 
-            {foreach name="arr1" id="vo"}
+            <?php if(is_array($arr1) || $arr1 instanceof \think\Collection || $arr1 instanceof \think\Paginator): if( count($arr1)==0 ) : echo "" ;else: foreach($arr1 as $key=>$vo): ?>
                 <tr>
                     <td></td>
-                    <td>{$vo.odd}</td>
-                    <td>{$vo.price}</td>
-                    <td>{$vo.kprice}</td>
-                    <td> {$vo.inTime|date="Y/m/d H:i:s",###}</td>
-                    <td><span class="label label-primary" > {if condition = "$vo.isDanger eq '1'"}
-                      {$vo.outTime|date="Y/m/d H:i:s",###}
-                        {else /}
+                    <td><?php echo $vo['odd']; ?></td>
+                    <td><?php echo $vo['price']; ?></td>
+                    <td><?php echo $vo['kprice']; ?></td>
+                    <td> <?php echo date("Y/m/d H:i:s",$vo['inTime']); ?></td>
+                    <td><span class="label label-primary" > <?php if($vo['isDanger'] == '1'): ?>
+                      <?php echo date("Y/m/d H:i:s",$vo['outTime']); else: ?>
                       未出险
-                        {/if}</span>  </td>
+                        <?php endif; ?></span>  </td>
 
                 </tr>
-            {/foreach}
+            <?php endforeach; endif; else: echo "" ;endif; ?>
             </tbody>
         </table>
     </div>
 </div>
-<script src="{$Think.__APPROOT__}/static/admin/js/demo/user-info.js"></script>
+<script src="<?php echo __APPROOT__; ?>/static/admin/js/demo/user-info.js"></script>

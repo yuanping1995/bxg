@@ -1,0 +1,276 @@
+---------------------------------------------------------------
+[ 2017-11-09T08:45:42+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin
+[ info ] 127.0.0.5/index.php/admin [运行时间：1.584091s][吞吐率：0.63req/s] [内存消耗：1,332.77kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-09T08:45:42+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/login/index
+[ info ] 127.0.0.5/index.php/admin/login/index [运行时间：0.094006s][吞吐率：10.64req/s] [内存消耗：1,206.50kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-09T08:45:45+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/login/index
+[ info ] 127.0.0.5/index.php/admin/login/index [运行时间：0.024001s][吞吐率：41.67req/s] [内存消耗：1,206.56kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-09T08:45:47+08:00 ] 127.0.0.5 127.0.0.1 POST /index.php/api/Ajaxadmin/Login
+[ info ] 127.0.0.5/index.php/api/Ajaxadmin/Login [运行时间：0.417024s][吞吐率：2.40req/s] [内存消耗：2,075.30kb] [文件加载：57]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Ajaxadmin',
+    2 => 'Login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+  'Mobilenumber' => '123',
+  'pass' => '123456',
+)
+[ info ] [ RUN ] app\api\controller\Ajaxadmin->Login[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\api\controller\Ajaxadmin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062004s ] mysql:dbname=bxgogo;host=192.168.1.16;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_info` [ RunTime:0.105006s ]
+[ sql ] [ SQL ] SELECT * FROM `user_info` WHERE  `Mobilenumber` = 123  AND `uPass` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_staff` [ RunTime:0.078005s ]
+[ sql ] [ SQL ] SELECT * FROM `user_staff` WHERE  `uId` = 20144230042 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-09T08:45:47+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin
+[ info ] 127.0.0.5/index.php/admin [运行时间：0.030002s][吞吐率：33.33req/s] [内存消耗：1,333.73kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'b_adminuid=20144230042; b_Staffrole=8',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin/login/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-09T08:45:47+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/count/index.html
+[ info ] 127.0.0.5/index.php/admin/count/index.html [运行时间：0.107007s][吞吐率：9.35req/s] [内存消耗：1,266.95kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'count',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'b_adminuid=20144230042; b_Staffrole=8',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Count->index[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Count.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\count\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-09T08:45:51+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/order/common_order.html
+[ info ] 127.0.0.5/index.php/admin/order/common_order.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：1,486.01kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'common_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; b_adminuid=20144230042; b_Staffrole=8',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Order->common_order[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Order.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\order\common_order.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-09T08:45:59+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/order/order_detail.html
+[ info ] 127.0.0.5/index.php/admin/order/order_detail.html [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：2,033.09kb] [文件加载：57]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'order_detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; b_adminuid=20144230042; b_Staffrole=8',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin/order/common_order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Order->order_detail[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Order.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=bxgogo;host=192.168.1.16;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_basic_order` [ RunTime:0.046003s ]
+[ sql ] [ SQL ] SELECT * FROM `user_basic_order` WHERE  `id` = null LIMIT 1 [ RunTime:0.001000s ]
+[ error ] [0]致命错误: Call to a member function toArray() on null[D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Order.php:33]
+---------------------------------------------------------------
+[ 2017-11-09T08:46:20+08:00 ] 127.0.0.5 127.0.0.1 GET /index.php/admin/order/common_order.html
+[ info ] 127.0.0.5/index.php/admin/order/common_order.html [运行时间：0.029002s][吞吐率：34.48req/s] [内存消耗：1,313.02kb] [文件加载：49]
+[ info ] [ LANG ] D:\phpStudy\WWW\newbxg\bxgAdmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'common_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; b_adminuid=20144230042; b_Staffrole=8',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.5/index.php/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Order->common_order[ D:\phpStudy\WWW\newbxg\bxgAdmin\application\admin\controller\Order.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\newbxg\bxgAdmin/./application/admin\view\order\common_order.html [ array (
+) ]
+[ info ] [ LOG ] INIT File

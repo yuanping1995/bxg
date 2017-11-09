@@ -48,7 +48,6 @@ class Order extends \think\Controller
                      $freight+= $result[$Sellerid['shopId']][$i]['freight'] ;
                  }
             }
-
         foreach ($Delivery as $key=>$dinfo){
             $goodsid['goodsid'] = $dinfo['goodsid'];
             $resultDelivery[  $goodsid['goodsid']]= $dinfo;

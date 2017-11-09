@@ -11,6 +11,7 @@ namespace app\api\controller;
 
 use app\admin\model\Asset;
 use app\admin\model\Close;
+use app\admin\model\Coupon;
 use app\admin\model\Honor_detail;
 use app\admin\model\info;
 use app\admin\model\log;
@@ -416,5 +417,51 @@ class Ajaxadmin extends \think\Controller
         }
     }
 
+    /**删除优惠券
+     * @return array|string
+     */
+    public function Deletecoupon(){
+        if(empty(is_visit(1))){
+            $U['uId'] = input("uId");
+            $U['id'] = input("id");
+            $time = time();
+            if (is_null1($U) == '0000') {
+                $state = '0000';
+                $msg = '必要参数不完整';
+            } else {
+                $logtb = new log();
+                DB::startTrans();
+                try {
+                    $Delectcoupon = Coupon::destroy(  $U['id']);
+                    $aa = cookie('adminuid');
+                    $logrest = $logtb->addlog($aa,'删除'.$U['uId'].'的保险单号id有'.json_encode($U['id'])."",$time);//增加管理员日志]
+                    if($Delectcoupon && $logrest){
+                        DB::commit();
+                        $state = '1111';
+                        $msg = "删除成功！";
+                    }else{
+                        $state = '0001';
+                        $msg = "删除失败！";
+                    }
+                }catch (\Exception $e) {
+                    Db::rollback();    // 回滚事务
+                    $state = '0002';
+                    $msg = "数据库操作失败";
+                }
+
+            }
+            $retrn = array(
+                'state'=>$state,
+                'msg'=>$msg,
+                'time'=>date("Y-m-d H:m:s",$time)
+            );
+            return $retrn;
+        }else{
+            return is_visit(1);
+        }
+    }
+    public function Selectoder(){
+        
+    }
 
 }

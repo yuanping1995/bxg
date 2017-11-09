@@ -285,5 +285,15 @@ function Mstatus($arr){
     }
     return $arr;
 }
-
+function Card($arr){
+    switch ($arr){
+        case 1:$arr = "贵宾卡";
+        break;
+        case 1:$arr = "代理卡";
+        break;
+        default:
+            $arr = "参数错误";
+    }
+    return $arr;
+}
 

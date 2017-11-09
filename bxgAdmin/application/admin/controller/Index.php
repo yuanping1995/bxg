@@ -30,7 +30,7 @@ class Index extends \think\Controller
     // 用户列表
     public function user_list()
     {
-        $list = info::with("Wallt,basic_Oder")->paginate()->toArray();
+        $list = info::with("Wallt,basic_Oder")->paginate(10)->toArray();
         $list = $list['data'];
         $arr = array(2,3,4,5,);
         $i = 0;
