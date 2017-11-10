@@ -6,6 +6,7 @@ use app\admin\model\Card;
 use app\admin\model\info;
 use app\admin\model\Recommend;
 use app\admin\model\Seller;
+use think\Env;
 
 class User extends \think\Controller
 {
@@ -68,10 +69,26 @@ class User extends \think\Controller
 	public function tab_7(){
 		return $this->fetch();
 	}
+	public static $ccc='000';
 	public function tab_8(){
 	    $U['uId'] = input("id");
-	    $oder = BasicOder::where($U)->paginate()->toArray();
-	    $this->assign("BasicOder",$oder['data']);
+	    $oder = BasicOder::where($U)->paginate(10)->toArray();
+            $Delivery = $oder['data'];
+        $Total_fee = 0;
+            foreach ($Delivery as $key => $dinfo) {
+                $goodsid['Mergeid'] = $dinfo['Mergeid'];
+                $dinfo['OrderType'] = OrderType($dinfo['OrderType']);
+                $resultDelivery[$goodsid['Mergeid']][] = $dinfo;
+            }
+        $num = array_keys($resultDelivery);
+        for ($i=0;$i<count($num);$i++){
+            for ($j=0;$j<count($resultDelivery[$num[$i]]);$j++){
+                $Total_fee += $resultDelivery[$num[$i]][$j]['Total_fee'];
+            }
+            array_unshift( $resultDelivery[ $num[$i]],$Total_fee);
+            $Total_fee = 0;
+        }
+	    $this->assign("BasicOder",$resultDelivery);
 		return $this->fetch();
 	}
 	public function tab_9(){

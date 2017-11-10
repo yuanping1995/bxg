@@ -285,6 +285,11 @@ function Mstatus($arr){
     }
     return $arr;
 }
+
+/**卡片管理
+ * @param $arr
+ * @return string
+ */
 function Card($arr){
     switch ($arr){
         case 1:$arr = "贵宾卡";
@@ -294,6 +299,100 @@ function Card($arr){
         default:
             $arr = "参数错误";
     }
+    return $arr;
+}
+
+/**订单类型转换
+ * @param $arr
+ * @return string
+ */
+function OrderType($arr,$top="1"){
+    if($top==1){
+    switch ($arr){
+        case 1:$arr = "普通订单";
+        break;
+        case 2:$arr = "亲密订单";
+        break;
+        default:
+            $arr = "参数错误";
+    }}else{
+        switch ($arr){
+            case 1:$arr = "充值";
+                break;
+            case 2:$arr = "短信";
+                break;
+            case 3:$arr = "升级";
+                break;
+            case 4:$arr = "兑换";
+                break;
+            case 5:$arr = "公益";
+                break;
+            default:
+                $arr = "参数错误";
+        }
+    }
+
+    return $arr;
+}
+
+/**订单类型
+ * @param $arr
+ * @return string
+ */
+function NoticeStatus($arr){
+    switch ($arr){
+        case 1:$arr = "已推送";
+        break;
+        case 2:$arr = "未推送";
+        break;
+        default:
+            $arr = "参数错误";
+    }
+    return $arr;
+}
+
+/**支付类型
+ * @param $arr
+ * @param string $toy
+ * @return string
+ */
+function PayType($arr,$toy = "1"){
+
+        switch ($arr){
+            case 1:$arr = "微信";
+                break;
+            case 2:$arr = "支付宝";
+                break;
+            case 3:$arr = "账户余额";
+                break;
+            case 4:$arr = "补充支付";
+                break;
+            default:
+                $arr = "参数错误";
+        }
+    return $arr;
+}
+
+/**状态类型
+ * @param $arr
+ * @return string
+ */
+function Statusattach($arr){
+    switch ($arr){
+        case 1:$arr = "成功";
+        break;
+        case 2:$arr = "失败";
+        break;
+        default:
+            $arr = "参数错误";
+    }
+    return $arr;
+}
+function isnull(){
+    $arr = array(
+        'state' => '0000',
+        'msg' => '必要参数不完整',
+    );
     return $arr;
 }
 

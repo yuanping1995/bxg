@@ -10,6 +10,7 @@ namespace app\api\controller;
 
 
 use app\admin\model\Asset;
+use app\admin\model\BasicOder;
 use app\admin\model\Close;
 use app\admin\model\Coupon;
 use app\admin\model\Honor_detail;
@@ -20,6 +21,9 @@ use app\admin\model\Staff;
 use app\admin\model\Wallt;
 use app\admin\model\Water;
 use app\admin\model\Wish;
+
+use app\api\Model\Attachorder;
+use app\api\Model\Reserveorder;
 use think\Db;
 use think\Request;
 class Ajaxadmin extends \think\Controller
@@ -421,7 +425,7 @@ class Ajaxadmin extends \think\Controller
      * @return array|string
      */
     public function Deletecoupon(){
-        if(empty(is_visit(1))){
+        if(empty(is_visit(2))){
             $U['uId'] = input("uId");
             $U['id'] = input("id");
             $time = time();
@@ -457,11 +461,109 @@ class Ajaxadmin extends \think\Controller
             );
             return $retrn;
         }else{
-            return is_visit(1);
+            return is_visit(2);
         }
     }
+
+    /**订单管理分页查询
+     * @return string|\think\response\Json
+     */
     public function Selectoder(){
-        
+        if(empty(is_visit(2))){
+            $oderselect = BasicOder::paginate(3)->toArray();
+           for ($i=0;$i<count($oderselect['data']);$i++){
+               $oderselect['data'][$i]['OrderType'] = OrderType($oderselect['data'][$i]['OrderType']);
+               $oderselect['data'][$i]['NoticeStatus'] = NoticeStatus($oderselect['data'][$i]['NoticeStatus']);
+               $oderselect['data'][$i]['PayType'] = PayType($oderselect['data'][$i]['PayType']);
+               $oderselect['data'][$i]['Placetime'] = date("Y-m-d H:i",$oderselect['data'][$i]['Placetime']);
+           }
+            return json($oderselect);
+        }else{
+            return is_visit(2);
+        }
+    }
+
+    /**订单条件查询
+     * @return array|string|\think\response\Json
+     */
+    public function Selectpendinggoods(){
+        if(empty(is_visit(2))){
+            $arr = array();
+            $arr = input();
+            if(is_null1($arr)=='0000'){
+               return isnull();//必要参数不完整的提示
+            }else{
+                $oderselect = BasicOder::where($arr)->paginate(10)->toArray();
+                for ($i=0;$i<count($oderselect['data']);$i++){
+                    $oderselect['data'][$i]['OrderType'] = OrderType($oderselect['data'][$i]['OrderType']);
+                    $oderselect['data'][$i]['NoticeStatus'] = NoticeStatus($oderselect['data'][$i]['NoticeStatus']);
+                    $oderselect['data'][$i]['PayType'] = PayType($oderselect['data'][$i]['PayType']);
+                    $oderselect['data'][$i]['Placetime'] = date("Y-m-d H:i",$oderselect['data'][$i]['Placetime']);
+                }
+                return json($oderselect);
+            }
+        }else{
+            return is_visit(2);
+        }
+    }
+    /***用户附属订单
+     * @return string|\think\response\Json
+     */
+    public function Attachorderselect(){
+        if(empty(is_visit(2))){
+            $oderselect = Attachorder::paginate(10)->toArray();
+            for ($i=0;$i<count($oderselect['data']);$i++){
+                $oderselect['data'][$i]['OrderType'] = OrderType($oderselect['data'][$i]['OrderType'],'attach');
+                $oderselect['data'][$i]['PayType'] = PayType($oderselect['data'][$i]['PayType']);
+                $oderselect['data'][$i]['Tradetime'] = date("Y-m-d H:i",$oderselect['data'][$i]['Tradetime']);
+                $oderselect['data'][$i]['Status'] = Statusattach($oderselect['data'][$i]['Status']);
+            }
+            return json($oderselect);
+        }else{
+            return is_visit(2);
+        }
+    }
+
+    /**用户预订单
+     * @return string|\think\response\Json
+     */
+    public function Reserveorderselect(){
+        if(empty(is_visit(2))){
+            $oderselect = Reserveorder::paginate(10)->toArray();
+            for ($i=0;$i<count($oderselect['data']);$i++){
+                $oderselect['data'][$i]['OrderType'] = OrderType($oderselect['data'][$i]['OrderType']);
+                $oderselect['data'][$i]['NoticeStatus'] = NoticeStatus($oderselect['data'][$i]['NoticeStatus']);
+                $oderselect['data'][$i]['PayType'] = PayType($oderselect['data'][$i]['PayType']);
+                $oderselect['data'][$i]['Placetime'] = date("Y-m-d H:i",$oderselect['data'][$i]['Placetime']);
+            } return json($oderselect);
+
+        }else{
+            return is_visit(2);
+        }
+    }
+
+    /**订单号查询详情
+     * @return string
+     */
+    public function Oderinfofind(){
+        if(empty(is_visit(2))){
+            $U['out_trade_no'] = input('out_trade_no');
+            if(is_null1($U)=="0000"){
+                return isnull();
+            }else{
+                $Oderinfo = BasicOder::where($U)->find()->toArray();
+                $Oderinfo['OrderType'] = OrderType($Oderinfo['OrderType']);
+                $Oderinfo['NoticeStatus'] = NoticeStatus($Oderinfo['NoticeStatus']);
+                $Oderinfo['PayType'] = PayType($Oderinfo['PayType']);
+                $Oderinfo['Goods'] = json_decode($Oderinfo['Goods'],true);
+                $Oderinfo['Address'] = json_decode($Oderinfo['Address'],true);
+                $Oderinfo['Delivery'] = json_decode($Oderinfo['Delivery'],true);
+                $Oderinfo['Placetime'] = date("Y-m-d H:i",$Oderinfo['Placetime']);
+            }
+            return json($Oderinfo);
+       }else{
+            return is_visit(2);
+        }
     }
 
 }

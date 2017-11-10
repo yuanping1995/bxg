@@ -36,9 +36,9 @@
                             </p>
                         </div>
                     </div>
-                    {foreach name="arr" id="vo" key="k"}
+                    {foreach name="arr['data']" id="vo" key="k"}
                     <div class="table-responsive m-t">
-                    	<h3 class="alert alert-success">商家:{$vo[0]['Sellerid']}</h3>
+                    	<h3 class="alert alert-success">商家:{$vo['sellerId']}</h3>
                         <table class="table invoice-table">
                             <thead>
                                 <tr>
@@ -52,7 +52,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            {foreach name="vo" id="vo_1" key="k"}
+                            {foreach name="vo['Goods']" id="vo_1" key="k1"}
                                 <tr>
                                     <td>
                                         <div><strong>{$vo_1.goodsname}</strong>
@@ -63,7 +63,7 @@
                                     <td>&yen;{$vo_1.bugnum*$vo_1.goodsmoney*0.04}</td>
                                     <td>&yen;{$vo_1.bugnum*$vo_1.goodsmoney}</td>
                                     <td>{$vo_1.goodsstate}</td>
-                                    <td>{$Delivery[$vo_1.goodsid]['Distribution']}:{$Delivery[$vo_1.goodsid]['Distributionnumber']}</td>
+                                    <td>{$Delivery[$vo_1.goodsid][$k1]['Distribution']}:{$Delivery[$vo_1.goodsid][$k1]['Distributionnumber']}</td>
                                 </tr>
                             {/foreach}
 
