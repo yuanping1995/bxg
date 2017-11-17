@@ -8,7 +8,7 @@ class Count extends \think\Controller
 	//首页数据展示
     public function index()
     {
-       return $this->fetch();
+      return $this->fetch();
     }
 
 // 数据统计

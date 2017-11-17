@@ -1,5 +1,5 @@
 <?php
-namespace app\api\controller;
+namespace app\api;
 
 class Index extends \think\Controller
 {

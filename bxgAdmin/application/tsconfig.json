@@ -5,5 +5,7 @@
 [{"goodsid":1,"Distribution":"快递","Distributionnumber":"16518233297067"},{"goodsid":2,"Distribution":"快递","Distributionnumber":"16518233297067"},{"goodsid":3,"Distribution":"快递","Distributionnumber":"16518233297067"}]
 {{"name":"颜色","data":{"red":1000,"sss":1000,}},{"name":"颜色1","data":{"red":1001,"sss":1000,}}}
 //        身份证
+        //收藏json
+{"goodsid":1,"title":"新款女PU皮手套触摸屏仿獭兔毛女冬加厚加绒保暖菱格女式韩版","mainfigure":"http://bxgogo.oss-cn-beijing.aliyuncs.com/images/goodsimg/20170929/201709291402165623.jpeg","money":125.2,"Url":"http://m.bxgogo.com/index/goods/index/id/3163.html"}
 {"Positive":"http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg","back":"http://images.china.cn/news/attachement/jpg/site3/20110924/45713173535868909.jpg"}
 [{"Name":"颜色", "data": ["红色", "黑色","白色", "蓝色", "粉色"]},{"Name":"颜色", "data": ["红色", "黑色","白色", "蓝色", "粉色"]},{"Name":"颜色", "data": ["红色", "黑色","白色", "蓝色", "粉色"]}]
